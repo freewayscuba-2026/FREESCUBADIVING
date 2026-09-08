@@ -73,21 +73,17 @@ Currently deployed from `frontend/` with `npx vercel --prod --yes`.
 - `frontend/public/`: `sitemap.xml`, `robots.txt`, `googlec214c112353e4e41.html` (Search Console
   verification), and `wp-content/uploads/...` (images carried over from the old WordPress site).
 
-### Studio (CMS panel) → Vercel
-Hosted at **https://dist-one-kappa-84.vercel.app** (Vercel project `dist`). Build + deploy:
+### Studio (CMS panel) → Sanity hosting (current)
+Hosted by Sanity at **https://freewayscuba.sanity.studio** (hostname set in `studio/sanity.cli.js`).
+This is independent of any Vercel account. To update it after schema/structure changes:
 ```bash
 cd studio
-SANITY_STUDIO_PROJECT_ID=4fuznbul SANITY_STUDIO_DATASET=production npx sanity build
-printf '{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }' > dist/vercel.json
-cd dist && npx vercel deploy --prod --yes
+npx sanity login          # once, as a project admin
+npx sanity deploy         # redeploys to freewayscuba.sanity.studio
 ```
-⚠️ **GOTCHA:** `vercel deploy --prod` creates a new deployment but does **not** move the stable alias.
-After deploying you MUST re-point it or the client keeps seeing the old panel:
-```bash
-npx vercel alias set <new-deployment-url> dist-one-kappa-84.vercel.app
-```
-Verify: the `static/sanity-*.js` bundle served by dist-one-kappa-84 must match the freshly built one.
-(Alternatively, deploy the Studio with `npx sanity deploy` to a `*.sanity.studio` URL to avoid this entirely.)
+No CORS config needed — `*.sanity.studio` origins are allowed automatically.
+
+_(Legacy: the panel used to be served from Vercel at dist-one-kappa-84.vercel.app; that can be retired.)_
 
 ## Not in this repo (owner-managed)
 - Domain registrar & DNS: **SiteGround** (client-owned). A record → Vercel; MX records untouched (email).
