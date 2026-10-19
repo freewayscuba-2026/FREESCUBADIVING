@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "@/components/LocalizedLink";
 import { useLanguage } from "@/context/LanguageContext";
 import { waLink, EMAIL, PHONE } from "@/data/content";
 import { WaIcon } from "@/components/icons";

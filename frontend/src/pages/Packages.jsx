@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link } from "@/components/LocalizedLink";
 import { ReviewCarousel } from "@/components/ReviewCarousel";
 import { useLanguage } from "@/context/LanguageContext";
 import { waLink } from "@/data/content";
@@ -196,16 +196,9 @@ export default function Packages() {
   return (
     <>
       <Helmet>
-        <title>{t.seo?.packages?.title || "Diving Packages & Tours Tulum | Cenote & Reef Experiences \u2014 Freeway Scuba Diving"}</title>
-        <meta name="description" content={t.seo?.packages?.description || "Cenote tours, reef dives and full-day packages in Tulum. Gran Cenote, Dos Ojos, Cozumel drift dives, bull sharks and whale sharks. Book on WhatsApp."} />
-        <link rel="canonical" href="https://freewayscubadiving.com/packages" />
-        <meta property="og:title" content="Diving Packages & Tours Tulum | Freeway Scuba Diving" />
-        <meta property="og:description" content="All our cenote and reef diving experiences in one place. From $2,700 MXN. Small groups, certified guides, book on WhatsApp." />
         <meta property="og:image" content="https://freewayscubadiving.com/wp-content/uploads/2023/07/Pit-dos-ojos-cenote-scaled.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Diving Packages & Tours Tulum | Freeway Scuba Diving" />
-        <meta name="twitter:description" content="All our cenote and reef diving packages in Tulum. Small groups, certified guides. Book on WhatsApp." />
         <meta name="twitter:image" content="https://freewayscubadiving.com/wp-content/uploads/2023/07/Pit-dos-ojos-cenote-scaled.jpg" />
         <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://freewayscubadiving.com" }, { "@type": "ListItem", position: 2, name: "Packages", item: "https://freewayscubadiving.com/packages" }] })}</script>
       </Helmet>

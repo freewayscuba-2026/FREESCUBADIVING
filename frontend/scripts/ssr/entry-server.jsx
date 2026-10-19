@@ -19,7 +19,7 @@ async function streamToString(stream) {
   return Buffer.concat(chunks).toString("utf8");
 }
 
-const HELMET_KEYS = ["title", "priority", "base", "meta", "link", "script", "style", "noscript"];
+const HELMET_KEYS = ["htmlAttributes", "title", "priority", "base", "meta", "link", "script", "style", "noscript"];
 
 function serializeHelmet(helmet) {
   const out = {};

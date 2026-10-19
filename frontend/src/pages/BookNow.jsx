@@ -12,11 +12,6 @@ export default function BookNow() {
   return (
     <>
       <Helmet>
-        <title>{t.seo?.book?.title || "Book Your Dive in Tulum | Reservation Request \u2014 Freeway Scuba Diving"}</title>
-        <meta name="description" content={t.seo?.book?.description || "Reserve your cenote, reef or Cozumel dive in Tulum. Choose your experience, date and pickup \u2014 send your booking request by email or WhatsApp."} />
-        <link rel="canonical" href="https://freewayscubadiving.com/book" />
-        <meta property="og:title" content="Book Your Dive in Tulum | Freeway Scuba Diving" />
-        <meta property="og:description" content="Choose your experience, date and pickup location — send your reservation request by email or WhatsApp. Diego Tenaglia confirms personally." />
         <meta property="og:image" content="https://freewayscubadiving.com/wp-content/uploads/2023/07/diving-in-tulum-scaled.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />

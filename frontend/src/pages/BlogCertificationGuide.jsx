@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link } from "@/components/LocalizedLink";
 import { ReviewCarousel } from "@/components/ReviewCarousel";
 import { waLink } from "@/data/content";
 import { WaIcon } from "@/components/icons";
@@ -75,11 +75,6 @@ export default function BlogCertificationGuide() {
   return (
     <>
       <Helmet>
-        <title>What Certification Do You Need for Cenote Diving? — Freeway Scuba Diving</title>
-        <meta name="description" content="Find out which scuba certification you need to dive Tulum's cenotes. No cert, Open Water, Advanced, Cave Diver — explained for every level." />
-        <link rel="canonical" href="https://freewayscubadiving.com/blog/certification-guide-cenote-diving" />
-        <meta property="og:title" content="What Certification Do You Need for Cenote Diving?" />
-        <meta property="og:description" content="No cert, Open Water, Advanced or Cave Diver — what each level unlocks in Tulum's cenotes, explained simply." />
         <meta property="og:type" content="article" />
         <meta property="og:image" content="https://freewayscubadiving.com/wp-content/uploads/2023/07/open-water-course-scaled.jpg" />
         <meta name="twitter:card" content="summary_large_image" />

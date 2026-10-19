@@ -1,8 +1,7 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link } from "@/components/LocalizedLink";
 import { ReviewCarousel } from "@/components/ReviewCarousel";
 import { Reveal } from "@/components/Reveal";
-import { useLanguage } from "@/context/LanguageContext";
 import { GoogleReviewButton } from "@/components/GoogleReviewButton";
 import { ReviewQuote } from "@/components/ReviewQuote";
 
@@ -28,14 +27,9 @@ const posts = [
 ];
 
 export default function Blog() {
-  const { t } = useLanguage();
   return (
     <>
       <Helmet>
-        <title>{t.seo?.blog?.title || "Diving Blog \u2014 Cenote Guides & Tips | Freeway Scuba Diving Tulum"}</title>
-        <meta name="description" content={t.seo?.blog?.description || "Cenote diving guides, tips and local knowledge from Freeway Scuba Diving \u2014 the cenote specialists in Tulum, Mexico."} />
-        <link rel="canonical" href="https://freewayscubadiving.com/blog" />
-        <meta property="og:title" content="Diving Blog | Freeway Scuba Diving Tulum" />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

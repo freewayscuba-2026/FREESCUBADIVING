@@ -46,14 +46,14 @@
         <title>Cenote Diving Tulum | Free Way Scuba Diving | Riviera Maya Mexico</title>
         <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
         <!--
-        Prerendered pages are generated in English. Visitors who prefer Spanish get a
-        client render instead, so we keep the English HTML hidden for them until React
-        has taken over (the app removes data-prerendered once it is running). Search
-        engines and English visitors are unaffected. Same rule as getPreferredLang().
+        Visitors who prefer Spanish and open the English home page (/) are sent to /es by
+        src/index.js. We keep the prerendered English home hidden for them until React has
+        taken over (the app removes data-prerendered once it is running), so there is no
+        flash of English. Every other page is unaffected.
         -->
         <style>html.fws-es #root[data-prerendered]{visibility:hidden}</style>
         <noscript><style>html.fws-es #root[data-prerendered]{visibility:visible}</style></noscript>
-        <script>try{var l=(localStorage.getItem("fws-lang")||navigator.language||"").toLowerCase();if(l.indexOf("es")===0)document.documentElement.className+=" fws-es"}catch(e){}</script>
+        <script>try{if(location.pathname.replace(/\/+$/,"")===""){var s=localStorage.getItem("fws-lang");var l=(s==="es"||s==="en"?s:(navigator.language||"")).toLowerCase();if(l.indexOf("es")===0)document.documentElement.className+=" fws-es"}}catch(e){}</script>
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>

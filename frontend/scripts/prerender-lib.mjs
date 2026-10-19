@@ -111,6 +111,10 @@ export function assemblePage(template, { route, bodyHtml, helmet = {}, cms = nul
     .join("");
 
   html = html.replace("</head>", () => `${headTags}</head>`);
+
+  // <html lang="..."> (English pages, or "es" for the /es pages) comes from Helmet.
+  const htmlAttrs = String(helmet.htmlAttributes || "").trim();
+  if (htmlAttrs) html = html.replace(/<html\b[^>]*>/i, () => `<html ${htmlAttrs}>`);
   html = html.replace(
     rootTag,
     () => `<div id="root" data-prerendered="${route}">${bodyHtml}</div>`,

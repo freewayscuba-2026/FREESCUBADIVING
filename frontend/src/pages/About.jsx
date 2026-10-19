@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
 import { ReviewCarousel } from "@/components/ReviewCarousel";
-import { Link } from "react-router-dom";
+import { Link } from "@/components/LocalizedLink";
 import { useLanguage } from "@/context/LanguageContext";
 import { waLink } from "@/data/content";
 import { WaIcon } from "@/components/icons";
@@ -126,11 +126,6 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>{t.seo?.about?.title || "About Freeway Scuba Diving | Cenote Specialists Tulum, Mexico"}</title>
-        <meta name="description" content={t.seo?.about?.description || "Freeway Scuba Diving \u2014 PADI Instructor Diego and his team, cenote diving specialists in Tulum. Private excursions, max 4 divers, fully personalized experiences."} />
-        <link rel="canonical" href="https://freewayscubadiving.com/about" />
-        <meta property="og:title" content="About Freeway Scuba Diving | Cenote Specialists Tulum" />
-        <meta property="og:description" content="PADI Instructor Diego, Full Cave Diver, offers private personalized cenote diving excursions in Tulum, Tulum & Playa del Carmen." />
         <meta property="og:image" content="https://freewayscubadiving.com/wp-content/uploads/2023/07/Discovery-scuba-diving-3-scaled.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />

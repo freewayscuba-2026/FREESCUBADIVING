@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { Link, NavLink } from "@/components/LocalizedLink";
 import { Menu, X, Languages } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { waLink } from "@/data/content";

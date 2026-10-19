@@ -20,6 +20,19 @@ const Blog         = lazy(() => import("@/pages/Blog"));
 const BlogCenoteGuide = lazy(() => import("@/pages/BlogCenoteGuide"));
 const BlogCertificationGuide = lazy(() => import("@/pages/BlogCertificationGuide"));
 
+// Pages that exist in English (/page) and Spanish (/es/page).
+const BILINGUAL_PAGES = [
+  ["/", Home],
+  ["/cenote-diving", CenoteDiving],
+  ["/reef-diving", ReefDiving],
+  ["/diving-courses", DivingCourses],
+  ["/packages", Packages],
+  ["/about", About],
+  ["/faq", FAQ],
+  ["/contact", Contact],
+  ["/book", BookNow],
+];
+
 // The route table. Shared by the browser app and by the prerender step
 // (scripts/prerender.mjs renders it with a StaticRouter), so both always agree.
 export function AppRoutes() {
@@ -27,15 +40,12 @@ export function AppRoutes() {
     <Suspense fallback={<PageSkeleton />}>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/"               element={<Home />} />
-          <Route path="/cenote-diving"  element={<CenoteDiving />} />
-          <Route path="/reef-diving"    element={<ReefDiving />} />
-          <Route path="/diving-courses" element={<DivingCourses />} />
-          <Route path="/packages"       element={<Packages />} />
-          <Route path="/about"          element={<About />} />
-          <Route path="/faq"            element={<FAQ />} />
-          <Route path="/contact"        element={<Contact />} />
-          <Route path="/book"           element={<BookNow />} />
+          {BILINGUAL_PAGES.map(([path, Page]) => (
+            <Route key={path} path={path} element={<Page />} />
+          ))}
+          {BILINGUAL_PAGES.map(([path, Page]) => (
+            <Route key={`es${path}`} path={path === "/" ? "/es" : `/es${path}`} element={<Page />} />
+          ))}
           <Route path="/blog"            element={<Blog />} />
           <Route path="/blog/best-cenotes-tulum" element={<BlogCenoteGuide />} />
           <Route path="/blog/certification-guide-cenote-diving" element={<BlogCertificationGuide />} />
@@ -57,11 +67,11 @@ function App({ Router = BrowserRouter, routerProps, helmetContext, initialCms = 
 
   return (
     <HelmetProvider context={helmetContext}>
-      <LanguageProvider initialCms={initialCms}>
-        <Router {...routerProps}>
+      <Router {...routerProps}>
+        <LanguageProvider initialCms={initialCms}>
           <AppRoutes />
-        </Router>
-      </LanguageProvider>
+        </LanguageProvider>
+      </Router>
     </HelmetProvider>
   );
 }

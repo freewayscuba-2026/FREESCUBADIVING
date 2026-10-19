@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link } from "@/components/LocalizedLink";
 import { ReviewCarousel } from "@/components/ReviewCarousel";
 import { useLanguage } from "@/context/LanguageContext";
 import { waLink, IMAGES } from "@/data/content";
@@ -164,16 +164,9 @@ export default function ReefDiving() {
   return (
     <>
       <Helmet>
-        <title>{t.seo?.reef?.title || "Reef Diving Tulum & Playa del Carmen | Cozumel, Playa del Carmen & Tulum \u2014 Freeway Scuba Diving"}</title>
-        <meta name="description" content={t.seo?.reef?.description || "Reef diving in Tulum & Playa del Carmen with certified guides. Cozumel drift dives, Playa del Carmen reefs, bull shark diving and whale shark snorkel. Book on WhatsApp."} />
-        <link rel="canonical" href="https://freewayscubadiving.com/reef-diving" />
-        <meta property="og:title" content="Reef Diving Tulum & Playa del Carmen | Freeway Scuba Diving" />
-        <meta property="og:description" content="Reef diving in Cozumel, Playa del Carmen and Tulum. Bull sharks, whale sharks, sea turtles and drift dives with certified guides." />
         <meta property="og:image" content="https://freewayscubadiving.com/wp-content/uploads/2023/07/diving-in-tulum-scaled.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Reef Diving Tulum & Playa del Carmen | Freeway Scuba Diving" />
-        <meta name="twitter:description" content="Drift dives in Cozumel, bull sharks in Playa del Carmen, whale shark snorkeling. Certified guides, book on WhatsApp." />
         <meta name="twitter:image" content="https://freewayscubadiving.com/wp-content/uploads/2023/07/diving-in-tulum-scaled.jpg" />
         <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://freewayscubadiving.com" }, { "@type": "ListItem", position: 2, name: "Reef Diving", item: "https://freewayscubadiving.com/reef-diving" }] })}</script>
         <script type="application/ld+json">{JSON.stringify({

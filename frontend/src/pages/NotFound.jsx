@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/components/LocalizedLink";
 import { Helmet } from "react-helmet-async";
 import { WaIcon } from "@/components/icons";
 import { waLink } from "@/data/content";

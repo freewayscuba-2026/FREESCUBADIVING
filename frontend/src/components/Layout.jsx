@@ -4,12 +4,17 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { FloatingGoogleReview } from "@/components/FloatingGoogleReview";
+import { LangHead } from "@/components/LangHead";
+import { stripLang } from "@/lib/i18nRoutes";
 
 export const Layout = () => {
   const { pathname } = useLocation();
-  useEffect(() => window.scrollTo({ top: 0, behavior: "instant" }), [pathname]);
+  // Scroll to the top when the page changes, but not when only the language changes.
+  const page = stripLang(pathname);
+  useEffect(() => window.scrollTo({ top: 0, behavior: "instant" }), [page]);
   return (
     <div className="min-h-screen bg-[#F4F1EB] text-[#061A2B] font-sans antialiased">
+      <LangHead />
       <Navbar />
       <main>
         <Outlet />

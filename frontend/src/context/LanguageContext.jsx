@@ -1,6 +1,8 @@
 import { createContext, useContext, useState, useCallback, useEffect, useMemo } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { content } from "@/data/content";
 import { fetchSanityContent } from "@/lib/sanityQueries";
+import { isBilingual, langFromPath, localizedPath, stripLang } from "@/lib/i18nRoutes";
 
 const LanguageContext = createContext(null);
 
@@ -65,25 +67,14 @@ function mergeContent(base, overrideForLang) {
   return merged;
 }
 
-// Language the visitor should see: saved choice first, then the browser language.
-// On the server (prerender) there is no visitor, so pages are generated in English.
-// The same rule is used by src/index.js to decide whether the prerendered HTML can
-// be hydrated (English) or must be replaced by a client render (Spanish).
-export function getPreferredLang() {
-  if (typeof window === "undefined") return "en";
-  try {
-    const saved = localStorage.getItem("fws-lang");
-    if (saved) return saved;
-  } catch (e) { /* storage blocked: fall through to the browser language */ }
-  const browser = navigator.language || navigator.userLanguage || "";
-  return browser.toLowerCase().startsWith("es") ? "es" : "en";
-}
-
 // `initialCms` is the Sanity content that was baked into the prerendered page, so the
 // first client render is identical to the server HTML. The mount effect below still
 // refetches, so edits published in Sanity show up without waiting for a rebuild.
+// The language comes from the URL (/es/... is Spanish), so it must sit inside the Router.
 export function LanguageProvider({ children, initialCms = null }) {
-  const [lang, setLang] = useState(getPreferredLang);
+  const { pathname, search, hash } = useLocation();
+  const navigate = useNavigate();
+  const lang = langFromPath(pathname);
 
   // CMS content loaded from Sanity (null until fetched / if unavailable).
   const [cms, setCms] = useState(initialCms);
@@ -96,13 +87,20 @@ export function LanguageProvider({ children, initialCms = null }) {
     return () => { alive = false; };
   }, []);
 
+  // Switching language opens the same page in the other language (its own URL).
+  // Pages without a Spanish version (the blog) send Spanish visitors to the Spanish home.
   const apply = useCallback((value) => {
-    setLang(value);
-    if (typeof window !== "undefined") {
-      try { localStorage.setItem("fws-lang", value); } catch (e) { /* storage blocked */ }
+    if (value !== "en" && value !== "es") return;
+    try { localStorage.setItem("fws-lang", value); } catch (e) { /* storage blocked */ }
+    const base = stripLang(pathname);
+    if (isBilingual(base)) {
+      navigate(localizedPath(base, value) + search + hash);
+    } else {
+      navigate(value === "es" ? "/es" : base + search + hash);
     }
-  }, []);
+  }, [pathname, search, hash, navigate]);
   const toggle = useCallback(() => apply(lang === "en" ? "es" : "en"), [lang, apply]);
+  const other = lang === "en" ? "ES" : "EN";
 
   const t = useMemo(() => {
     let merged = mergeContent(content[lang], cms ? cms[lang] : null);
@@ -111,7 +109,7 @@ export function LanguageProvider({ children, initialCms = null }) {
   }, [lang, cms]);
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang: apply, toggle, t }}>
+    <LanguageContext.Provider value={{ lang, setLang: apply, toggle, other, t }}>
       {children}
     </LanguageContext.Provider>
   );

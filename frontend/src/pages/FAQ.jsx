@@ -39,16 +39,9 @@ export default function FAQ() {
   return (
     <>
       <Helmet>
-        <title>{t.seo?.faq?.title || "Cenote Diving FAQ Tulum \u2014 Certification, Safety & Booking | Freeway Scuba Diving"}</title>
-        <meta name="description" content={t.seo?.faq?.description || "Everything you need to know before cenote diving in Tulum: Do you need certification? What's included? How safe is it? Answered by our certified dive guides."} />
-        <link rel="canonical" href="https://freewayscubadiving.com/faq" />
-        <meta property="og:title" content="Cenote Diving FAQ Tulum | Freeway Scuba Diving" />
-        <meta property="og:description" content="Certification, safety, what's included, prices and how to book cenote diving in Tulum. Answered by experts." />
         <meta property="og:image" content="https://freewayscubadiving.com/wp-content/uploads/2023/07/dos-ojos-cenote-2.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Cenote Diving FAQ Tulum | Freeway Scuba Diving" />
-        <meta name="twitter:description" content="All your questions about cenote diving in Tulum answered by certified guides." />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
       </Helmet>

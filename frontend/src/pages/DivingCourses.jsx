@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link } from "@/components/LocalizedLink";
 import { ReviewCarousel } from "@/components/ReviewCarousel";
 import { useLanguage } from "@/context/LanguageContext";
 import { waLink, IMAGES } from "@/data/content";
@@ -116,16 +116,9 @@ export default function DivingCourses() {
   return (
     <>
       <Helmet>
-        <title>{t.seo?.courses?.title || "Diving Courses in Tulum | PADI Open Water, Advanced & Specialty \u2014 Freeway Scuba Diving"}</title>
-        <meta name="description" content={t.seo?.courses?.description || "Learn to scuba dive in Tulum with PADI certified instructors. Open Water, Advanced, Nitrox specialty and Discover Scuba. Small groups, real ocean dives."} />
-        <link rel="canonical" href="https://freewayscubadiving.com/diving-courses" />
-        <meta property="og:title" content="Diving Courses in Tulum | PADI Certified — Freeway Scuba Diving" />
-        <meta property="og:description" content="PADI diving courses in Tulum. Open Water from $8,900 MXN. Small groups, certified instructors, real cenote and ocean dives included." />
         <meta property="og:image" content="https://freewayscubadiving.com/wp-content/uploads/2023/07/open-water-course-scaled.jpg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="PADI Diving Courses in Tulum | Freeway Scuba Diving" />
-        <meta name="twitter:description" content="Open Water, Advanced, Nitrox and Discover Scuba in Tulum. Small groups, certified instructors. Book on WhatsApp." />
         <meta name="twitter:image" content="https://freewayscubadiving.com/wp-content/uploads/2023/07/open-water-course-scaled.jpg" />
         <script type="application/ld+json">{JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: "https://freewayscubadiving.com" }, { "@type": "ListItem", position: 2, name: "Diving Courses", item: "https://freewayscubadiving.com/diving-courses" }] })}</script>
         <script type="application/ld+json">{JSON.stringify({

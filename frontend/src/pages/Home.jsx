@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link } from "@/components/LocalizedLink";
 import { ReviewCarousel } from "@/components/ReviewCarousel";
 import { Hero } from "@/components/sections/Hero";
 import { CenoteSpecialty } from "@/components/sections/CenoteSpecialty";
@@ -144,9 +144,6 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>{t.seo?.home?.title || "Scuba Diving Tours & PADI Courses in Tulum, Playa del Carmen & Cozumel \u2014 Freeway Scuba Diving"}</title>
-        <meta name="description" content={t.seo?.home?.description || "Boutique dive center in Tulum with 15 years of experience. Private small-group cenote diving, reef diving and PADI courses across Tulum & Playa del Carmen. Book on WhatsApp."} />
-        <link rel="canonical" href="https://freewayscubadiving.com/" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
       <Hero />

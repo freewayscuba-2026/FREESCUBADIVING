@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/components/LocalizedLink";
 import { useLanguage } from "@/context/LanguageContext";
 import { IMAGES } from "@/data/content";
 import { ArrowRight } from "lucide-react";

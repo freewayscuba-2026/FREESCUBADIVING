@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link } from "@/components/LocalizedLink";
 import { ReviewCarousel } from "@/components/ReviewCarousel";
 import { waLink } from "@/data/content";
 import { WaIcon } from "@/components/icons";
@@ -150,11 +150,6 @@ export default function BlogCenoteGuide() {
   return (
     <>
       <Helmet>
-        <title>Best Cenotes for Diving in Tulum & Playa del Carmen — Freeway Scuba Diving</title>
-        <meta name="description" content="Complete guide to the best cenotes for diving and snorkeling near Tulum: Dos Ojos, The Pit, Angelita, Casa Cenote and more. Depths, certifications, visibility and tour info." />
-        <link rel="canonical" href="https://freewayscubadiving.com/blog/best-cenotes-tulum" />
-        <meta property="og:title" content="Best Cenotes for Diving in Tulum — Complete Guide" />
-        <meta property="og:description" content="14 best cenotes for diving and snorkeling near Tulum. Depths, certifications, what to expect — by Freeway Scuba Diving." />
         <meta property="og:type" content="article" />
         <meta property="og:image" content="https://freewayscubadiving.com/wp-content/uploads/2023/07/dos-ojos-cenote-2.jpg" />
         <meta name="twitter:card" content="summary_large_image" />

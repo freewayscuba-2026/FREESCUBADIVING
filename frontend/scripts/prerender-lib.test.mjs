@@ -110,3 +110,25 @@ test("isPrerendered ignores the CSS/comment in the template and detects real out
   });
   assert.equal(isPrerendered(page), true);
 });
+
+test("assemblePage sets <html lang> from Helmet and keeps the page language", () => {
+  const out = assemblePage(TEMPLATE, {
+    route: "/es/cenote-diving",
+    bodyHtml: "<h1>Buceo</h1>",
+    helmet: { htmlAttributes: 'lang="es"', title: "<title>Buceo en Cenotes</title>", meta: "", link: "" },
+    calendar: { month: 1, year: 2027 },
+  });
+  assert.ok(out.startsWith('<!doctype html><html lang="es">'));
+  assert.equal((out.match(/<html/g) || []).length, 1);
+  assert.match(out, /<div id="root" data-prerendered="\/es\/cenote-diving">/);
+});
+
+test("routesFromSitemap and outputFileForRoute handle /es pages", () => {
+  const xml = `<urlset>
+    <url><loc>https://freewayscubadiving.com/es</loc><xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/"/></url>
+    <url><loc>https://freewayscubadiving.com/es/cenote-diving</loc></url>
+  </urlset>`;
+  assert.deepEqual(routesFromSitemap(xml), ["/es", "/es/cenote-diving"]);
+  assert.equal(outputFileForRoute("/es"), "es/index.html");
+  assert.equal(outputFileForRoute("/es/cenote-diving"), "es/cenote-diving/index.html");
+});
