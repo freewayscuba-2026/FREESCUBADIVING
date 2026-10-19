@@ -132,3 +132,27 @@ test("routesFromSitemap and outputFileForRoute handle /es pages", () => {
   assert.equal(outputFileForRoute("/es"), "es/index.html");
   assert.equal(outputFileForRoute("/es/cenote-diving"), "es/cenote-diving/index.html");
 });
+
+import { splitHoistedTags, langForRoute } from "./prerender-lib.mjs";
+
+test("hoisted tags move from the page body into <head>", () => {
+  const template =
+    '<html lang="en"><head><title>Home</title><meta name="description" content="old"/></head><body><div id="root"></div></body></html>';
+  const body =
+    '<title>Buceo</title><meta name="description" content="nueva"/><link rel="alternate" hrefLang="es" href="https://x/es"/><div>hola</div>';
+  const out = assemblePage(template, { route: "/es/cenote-diving", bodyHtml: body, calendar: { month: 1, year: 2026 } });
+  assert.match(out, /<html lang="es">/);
+  const head = out.slice(0, out.indexOf("</head>"));
+  assert.match(head, /<title>Buceo<\/title>/);
+  assert.match(head, /hreflang="es"/);
+  assert.doesNotMatch(head, /<title>Home/);
+  assert.doesNotMatch(head, /content="old"/);
+  assert.match(out, /data-prerendered="\/es\/cenote-diving"><div>hola<\/div>/);
+});
+
+test("splitHoistedTags and langForRoute", () => {
+  assert.equal(splitHoistedTags("<div>x</div>").body, "<div>x</div>");
+  assert.equal(langForRoute("/es"), "es");
+  assert.equal(langForRoute("/es/faq"), "es");
+  assert.equal(langForRoute("/espresso"), "en");
+});

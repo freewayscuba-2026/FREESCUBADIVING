@@ -81,6 +81,34 @@ function removeTemplateDuplicates(html, helmet) {
   return out;
 }
 
+// React 19 "hoists" <title>, <meta> and <link> tags to the document head in the browser,
+// but when the app is rendered into a plain <div> on the server it writes them as the
+// first thing inside that div. Browsers and crawlers only trust them in <head>, so we
+// take that leading run of tags out of the page markup and return them separately.
+const HOISTED_TAG = /^\s*(?:<title\b[^>]*>[\s\S]*?<\/title>|<meta\b[^>]*\/?>|<link\b[^>]*\/?>)/i;
+
+export function splitHoistedTags(html) {
+  const title = [];
+  const meta = [];
+  const link = [];
+  let rest = html;
+  for (;;) {
+    const match = rest.match(HOISTED_TAG);
+    if (!match) break;
+    const tag = match[0].trim();
+    if (/^<title/i.test(tag)) title.push(tag);
+    else if (/^<meta/i.test(tag)) meta.push(tag);
+    else link.push(tag.replace(/\bhrefLang=/g, "hreflang="));
+    rest = rest.slice(match[0].length);
+  }
+  return { title: title.join(""), meta: meta.join(""), link: link.join(""), body: rest };
+}
+
+// Language of a route: /es and /es/... are Spanish, everything else English.
+export function langForRoute(route) {
+  return route === "/es" || route.startsWith("/es/") ? "es" : "en";
+}
+
 // Build the final HTML for one route from the CRA template (build/index.html).
 export function assemblePage(template, { route, bodyHtml, helmet = {}, cms = null, calendar }) {
   const rootTag = '<div id="root"></div>';
@@ -90,6 +118,17 @@ export function assemblePage(template, { route, bodyHtml, helmet = {}, cms = nul
   if (!template.includes("</head>")) {
     throw new Error("build/index.html has no </head>");
   }
+
+  // Tags React wrote at the top of the page markup (see splitHoistedTags) move to <head>,
+  // together with any tags Helmet collected (older react-helmet-async versions).
+  const hoisted = splitHoistedTags(bodyHtml);
+  bodyHtml = hoisted.body;
+  helmet = {
+    ...helmet,
+    title: `${helmet.title || ""}${hoisted.title}`,
+    meta: `${helmet.meta || ""}${hoisted.meta}`,
+    link: `${helmet.link || ""}${hoisted.link}`,
+  };
 
   let html = removeTemplateDuplicates(template, helmet);
 
@@ -112,9 +151,8 @@ export function assemblePage(template, { route, bodyHtml, helmet = {}, cms = nul
 
   html = html.replace("</head>", () => `${headTags}</head>`);
 
-  // <html lang="..."> (English pages, or "es" for the /es pages) comes from Helmet.
-  const htmlAttrs = String(helmet.htmlAttributes || "").trim();
-  if (htmlAttrs) html = html.replace(/<html\b[^>]*>/i, () => `<html ${htmlAttrs}>`);
+  // <html lang="en"> in the template becomes lang="es" on the Spanish pages.
+  html = html.replace(/<html\b[^>]*>/i, () => `<html lang="${langForRoute(route)}">`);
   html = html.replace(
     rootTag,
     () => `<div id="root" data-prerendered="${route}">${bodyHtml}</div>`,
