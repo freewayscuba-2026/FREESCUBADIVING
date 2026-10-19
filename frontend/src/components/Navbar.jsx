@@ -97,7 +97,7 @@ export const Navbar = () => {
           <button
             onClick={() => setOpen((o) => !o)}
             data-testid="mobile-menu-toggle"
-            aria-label="Menu"
+            aria-label={t.ui.shared.menu}
             className="xl:hidden text-white p-2"
           >
             {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

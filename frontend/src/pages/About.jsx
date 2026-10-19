@@ -89,14 +89,14 @@ function ExperienceCarousel({ lang }) {
       {/* Prev / Next */}
       <button
         onClick={() => resetTimer(-1)}
-        aria-label="Previous"
+        aria-label={lang === "es" ? "Anterior" : "Previous"}
         className="absolute -left-4 sm:-left-6 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#061A2B]/80 border border-white/20 text-white hover:bg-[#00B4D8] transition-colors shadow-lg"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={() => resetTimer(1)}
-        aria-label="Next"
+        aria-label={lang === "es" ? "Siguiente" : "Next"}
         className="absolute -right-4 sm:-right-6 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#061A2B]/80 border border-white/20 text-white hover:bg-[#00B4D8] transition-colors shadow-lg"
       >
         <ChevronRight className="w-5 h-5" />
@@ -154,9 +154,9 @@ export default function About() {
       <PageHeader
         image={IMAGES.aboutDiver}
         badge="Tulum · Playa del Carmen"
-        title="About Freeway Scuba Diving"
-        subtitle="PADI Instructor & Full Cave Diver — private, personalized diving experiences in Tulum & Playa del Carmen."
-        imgAlt="Freeway Scuba Diving — certified cenote dive guides in Tulum"
+        title={t.ui.about.pageTitle}
+        subtitle={t.ui.about.pageSubtitle}
+        imgAlt={t.ui.alt.aboutPage}
       />
 
       {/* Diego quote */}
@@ -170,7 +170,7 @@ export default function About() {
           <div className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[#00B4D8] text-xs sm:text-sm font-semibold tracking-wide uppercase">
             <span>Diego Tenaglia</span>
             <span className="text-white/30">|</span>
-            <span>PADI Instructor</span>
+            <span>{t.ui.about.role}</span>
             <span className="text-white/30">|</span>
             <span>Full Cave Diver</span>
           </div>

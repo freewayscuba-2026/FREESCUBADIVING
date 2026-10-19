@@ -32,7 +32,7 @@ export const FloatingGoogleReview = () => {
       href={GOOGLE_REVIEW_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Leave a Google Review"
+      aria-label={lang === "es" ? "Deja una reseña en Google" : "Leave a Google Review"}
       className="hidden sm:flex fixed bottom-28 right-5 z-50 items-center gap-2.5 bg-white text-[#3c4043] rounded-full shadow-xl shadow-black/25 px-3.5 py-2.5 hover:scale-105 hover:shadow-2xl transition-all duration-200"
     >
       <svg viewBox="0 0 24 24" className="w-5 h-5 shrink-0" aria-hidden="true">

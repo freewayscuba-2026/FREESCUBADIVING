@@ -11,7 +11,7 @@ export const Hero = () => {
       <div className="absolute inset-0">
         <img
           src={IMAGES.heroCenote}
-          alt="Scuba diver exploring a crystal-clear cenote in Tulum, Mexico"
+          alt={t.ui.alt.hero}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#020B14] via-[#061A2B]/70 to-[#061A2B]/40" />

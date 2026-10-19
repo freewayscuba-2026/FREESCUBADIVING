@@ -15,7 +15,7 @@ export const CoursesSection = () => {
           <h2 className="mt-4 font-serif text-3xl sm:text-4xl tracking-tight text-balance">{c.title}</h2>
           <p className="mt-5 text-[#4B5563] leading-relaxed">{c.subtitle}</p>
           <div className="mt-6 overflow-hidden rounded-2xl shadow-xl">
-            <img src={c.image} alt="PADI diving course in open water" className="w-full h-56 object-cover" />
+            <img src={c.image} alt={t.ui.alt.course} className="w-full h-56 object-cover" />
           </div>
         </Reveal>
 

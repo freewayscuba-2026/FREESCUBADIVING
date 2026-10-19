@@ -72,7 +72,7 @@ export const ContactSection = () => {
               className="inline-flex items-center gap-2 bg-white/5 border border-white/10 hover:bg-white/10 text-white/80 hover:text-white font-medium px-6 py-3 rounded-full transition-colors text-sm"
             >
               <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-              Leave us a Google Review — it means the world to us
+              {t.ui.shared.googleReviewLine}
             </a>
           </Reveal>
         </div>

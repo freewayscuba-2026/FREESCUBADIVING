@@ -208,7 +208,7 @@ export default function Packages() {
         badge="Tulum · Playa del Carmen"
         title={p.title}
         subtitle={p.subtitle}
-        imgAlt="Diving packages in Tulum — cenote and reef experiences"
+        imgAlt={t.ui.alt.packagesPage}
       />
 
       {/* Diving Packages */}

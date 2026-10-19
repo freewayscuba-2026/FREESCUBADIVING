@@ -25,17 +25,21 @@ const faqJsonLd = {
 
 function SeasonBadge({ item }) {
   const { month } = useCalendar();
+  const { t } = useLanguage();
+  const s = t.ui.shared;
   if (!item.seasonMonths) return null;
   const inSeason = item.seasonMonths.includes(month);
   return (
     <div className={`flex items-center gap-1.5 px-3 py-2 text-xs font-semibold ${inSeason ? "bg-green-500/15 text-green-400 border-b border-green-500/20" : "bg-white/5 text-white/40 border-b border-white/10"}`}>
       <span className={`w-2 h-2 rounded-full shrink-0 ${inSeason ? "bg-green-400 animate-pulse" : "bg-white/20"}`} />
-      {inSeason ? "🟢 In season now" : "⏸ Out of season"}
+      {inSeason ? s.inSeasonNow : s.outOfSeason}
     </div>
   );
 }
 
 function TourCard({ item, index }) {
+  const { t } = useLanguage();
+  const s = t.ui.shared;
   return (
     <Reveal delay={(index % 3) * 0.07}>
       <div className={`group h-full flex flex-col bg-white/5 backdrop-blur-xl border rounded-2xl overflow-hidden shadow-2xl transition-colors hover:border-[#00B4D8]/40 ${item.highlight ? "border-[#00B4D8]/50 ring-1 ring-[#00B4D8]/30" : "border-white/10"}`}>
@@ -54,7 +58,7 @@ function TourCard({ item, index }) {
           </span>
           {item.highlight && (
             <span className="absolute top-3 right-3 text-[11px] font-bold tracking-wide uppercase bg-white/90 text-[#061A2B] px-2.5 py-1 rounded-full">
-              ★ Top Pick
+              {s.topPick}
             </span>
           )}
           {item.cenote && (
@@ -92,7 +96,7 @@ function TourCard({ item, index }) {
               <MapPin className="w-3.5 h-3.5 text-[#00B4D8] shrink-0" /> {item.distance}
             </div>
             <div className="flex items-center gap-1.5 text-white/60">
-              <Users className="w-3.5 h-3.5 text-[#00B4D8] shrink-0" /> {item.groupSize || "Max 4 divers"}
+              <Users className="w-3.5 h-3.5 text-[#00B4D8] shrink-0" /> {item.groupSize || s.maxDivers4}
             </div>
           </div>
 
@@ -110,7 +114,7 @@ function TourCard({ item, index }) {
           {/* Included */}
           {item.included && (
             <div className="mt-3">
-              <div className="text-[10px] uppercase tracking-wide text-white/40 mb-1.5">Included</div>
+              <div className="text-[10px] uppercase tracking-wide text-white/40 mb-1.5">{s.included}</div>
               <div className="flex flex-wrap gap-1.5">
                 {item.included.map((inc) => (
                   <span key={inc} className="inline-flex items-center gap-1 text-[10px] bg-white/5 border border-white/10 text-white/60 px-2 py-0.5 rounded-full">
@@ -122,7 +126,7 @@ function TourCard({ item, index }) {
           )}
           {item.notIncluded && (
             <div className="mt-2">
-              <div className="text-[10px] uppercase tracking-wide text-white/30 mb-1.5">Not included</div>
+              <div className="text-[10px] uppercase tracking-wide text-white/30 mb-1.5">{s.notIncluded}</div>
               <div className="flex flex-wrap gap-1.5">
                 {item.notIncluded.map((ni) => (
                   <span key={ni} className="inline-flex items-center gap-1 text-[10px] border border-white/8 text-white/35 px-2 py-0.5 rounded-full">
@@ -136,7 +140,7 @@ function TourCard({ item, index }) {
           {/* Price + CTA */}
           <div className="mt-5 pt-4 border-t border-white/10 flex items-end justify-between gap-3">
             <div>
-              <div className="text-[11px] uppercase tracking-wide text-white/50">From</div>
+              <div className="text-[11px] uppercase tracking-wide text-white/50">{s.from}</div>
               <div className="font-serif text-2xl text-[#00B4D8]">{item.price}</div>
             </div>
             <div className="flex items-center gap-2">
@@ -146,13 +150,13 @@ function TourCard({ item, index }) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-4 py-2.5 rounded-full text-sm transition-transform hover:-translate-y-0.5 whitespace-nowrap"
               >
-                <WaIcon className="w-4 h-4" /> Book
+                <WaIcon className="w-4 h-4" /> {s.book}
               </a>
               <Link
                 to="/book?i=0"
                 className="inline-flex items-center gap-2 bg-[#00B4D8] hover:bg-[#0099BB] text-white font-semibold px-4 py-2.5 rounded-full text-sm transition-transform hover:-translate-y-0.5 whitespace-nowrap"
               >
-                <Mail className="w-4 h-4" /> Book
+                <Mail className="w-4 h-4" /> {s.book}
               </Link>
             </div>
           </div>
@@ -199,10 +203,10 @@ export default function CenoteDiving() {
 
       <PageHeader
         image={IMAGES.heroCenote}
-        badge="Main Specialty · Tulum"
-        title={t.pageTitles?.cenote?.title || "Cenote Diving in Tulum"}
-        subtitle={t.pageTitles?.cenote?.subtitle || "Private cenote diving trips in Tulum & Playa del Carmen with certified local guides."}
-        imgAlt="Cenote diving in Tulum — crystal-clear freshwater cave with sunlight beams"
+        badge={t.ui.cenoteBadge}
+        title={t.pageTitles?.cenote?.title}
+        subtitle={t.pageTitles?.cenote?.subtitle}
+        imgAlt={t.ui.alt.cenotePage}
       />
 
       {/* Intro */}

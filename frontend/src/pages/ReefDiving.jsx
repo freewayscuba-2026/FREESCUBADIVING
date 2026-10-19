@@ -19,28 +19,23 @@ function bookIndex(item) {
   return 1; // reef diving
 }
 
-const whyPoints = [
-  { icon: "Award", title: "Certified dive guides", desc: "Every reef dive led by certified, experienced professionals." },
-  { icon: "Users", title: "Small groups", desc: "Personalised attention for every diver in the group." },
-  { icon: "ShieldCheck", title: "Safety briefing", desc: "Full safety briefing before every dive, always." },
-  { icon: "Fish", title: "Rich marine life", desc: "Sea turtles, eagle rays, nurse sharks and vibrant coral." },
-  { icon: "MapPin", title: "3 top reef destinations", desc: "Playa del Carmen, Cozumel and Tulum reefs." },
-  { icon: "Compass", title: "All levels welcome", desc: "From first certified divers to experienced adventurers." },
-];
-
 function SeasonBadge({ item }) {
   const { month } = useCalendar();
+  const { t } = useLanguage();
+  const s = t.ui.shared;
   if (!item.seasonMonths) return null;
   const inSeason = item.seasonMonths.includes(month);
   return (
     <div className={`flex items-center gap-1.5 px-3 py-2 text-xs font-semibold ${inSeason ? "bg-green-500/15 text-green-400 border-b border-green-500/20" : "bg-white/5 text-white/40 border-b border-white/10"}`}>
       <span className={`w-2 h-2 rounded-full shrink-0 ${inSeason ? "bg-green-400 animate-pulse" : "bg-white/20"}`} />
-      {inSeason ? "🟢 In season now" : "⏸ Out of season"}
+      {inSeason ? s.inSeasonNow : s.outOfSeason}
     </div>
   );
 }
 
 function TourCard({ item, index }) {
+  const { t } = useLanguage();
+  const s = t.ui.shared;
   return (
     <Reveal delay={(index % 3) * 0.07}>
       <div className="group h-full flex flex-col bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl transition-colors hover:border-[#00B4D8]/40">
@@ -81,7 +76,7 @@ function TourCard({ item, index }) {
               <MapPin className="w-3.5 h-3.5 text-[#00B4D8] shrink-0" /> {item.distance}
             </div>
             <div className="flex items-center gap-1.5 text-white/60">
-              <Users className="w-3.5 h-3.5 text-[#00B4D8] shrink-0" /> {item.groupSize || "Max 6 divers"}
+              <Users className="w-3.5 h-3.5 text-[#00B4D8] shrink-0" /> {item.groupSize || s.maxDivers6}
             </div>
           </div>
 
@@ -97,7 +92,7 @@ function TourCard({ item, index }) {
 
           {item.included && (
             <div className="mt-3">
-              <div className="text-[10px] uppercase tracking-wide text-white/40 mb-1.5">Included</div>
+              <div className="text-[10px] uppercase tracking-wide text-white/40 mb-1.5">{s.included}</div>
               <div className="flex flex-wrap gap-1.5">
                 {item.included.map((inc) => (
                   <span key={inc} className="inline-flex items-center gap-1 text-[10px] bg-white/5 border border-white/10 text-white/60 px-2 py-0.5 rounded-full">
@@ -109,7 +104,7 @@ function TourCard({ item, index }) {
           )}
           {item.notIncluded && (
             <div className="mt-2">
-              <div className="text-[10px] uppercase tracking-wide text-white/30 mb-1.5">Not included</div>
+              <div className="text-[10px] uppercase tracking-wide text-white/30 mb-1.5">{s.notIncluded}</div>
               <div className="flex flex-wrap gap-1.5">
                 {item.notIncluded.map((ni) => (
                   <span key={ni} className="inline-flex items-center gap-1 text-[10px] border border-white/8 text-white/35 px-2 py-0.5 rounded-full">
@@ -122,7 +117,7 @@ function TourCard({ item, index }) {
 
           <div className="mt-5 pt-4 border-t border-white/10 flex items-end justify-between gap-3">
             <div>
-              <div className="text-[11px] uppercase tracking-wide text-white/50">From</div>
+              <div className="text-[11px] uppercase tracking-wide text-white/50">{s.from}</div>
               <div className="font-serif text-2xl text-[#00B4D8]">{item.price}</div>
             </div>
             <div className="flex items-center gap-2">
@@ -132,13 +127,13 @@ function TourCard({ item, index }) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-4 py-2.5 rounded-full text-sm transition-transform hover:-translate-y-0.5 whitespace-nowrap"
               >
-                <WaIcon className="w-4 h-4" /> Book
+                <WaIcon className="w-4 h-4" /> {s.book}
               </a>
               <Link
                 to={`/book?i=${bookIndex(item)}`}
                 className="inline-flex items-center gap-2 bg-[#00B4D8] hover:bg-[#0099BB] text-white font-semibold px-4 py-2.5 rounded-full text-sm transition-transform hover:-translate-y-0.5 whitespace-nowrap"
               >
-                <Mail className="w-4 h-4" /> Book
+                <Mail className="w-4 h-4" /> {s.book}
               </Link>
             </div>
           </div>
@@ -150,6 +145,7 @@ function TourCard({ item, index }) {
 
 export default function ReefDiving() {
   const { t } = useLanguage();
+  const r = t.ui.reef;
 
   const reefItems = t.packages.items.filter(
     (i) => i.cenote === null && i.type && !i.type.toLowerCase().includes("snorkel")
@@ -188,20 +184,20 @@ export default function ReefDiving() {
       <PageHeader
         image={IMAGES.reef}
         badge="Tulum · Playa del Carmen · Cozumel"
-        title={t.pageTitles?.reef?.title || "Reef Diving Tours in Tulum, Playa del Carmen & Cozumel"}
-        subtitle={t.pageTitles?.reef?.subtitle || "Private, small-group reef diving along the Mesoamerican Barrier Reef and Cozumel's Marine National Park."}
-        imgAlt="Reef diving in Tulum & Playa del Carmen — colorful coral and marine life"
+        title={t.pageTitles?.reef?.title}
+        subtitle={t.pageTitles?.reef?.subtitle}
+        imgAlt={t.ui.alt.reefPage}
       />
 
       {/* Intro */}
       <section className="py-16 bg-[#061A2B]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[#00B4D8] text-xs tracking-[0.2em] uppercase font-semibold">Ocean Diving</span>
+          <span className="text-[#00B4D8] text-xs tracking-[0.2em] uppercase font-semibold">{r.eyebrow}</span>
           <h2 className="mt-4 font-serif text-white text-3xl sm:text-4xl tracking-tight">
-            Choose Your Reef Diving Experience
+            {r.h2}
           </h2>
           <p className="mt-5 text-white/65 text-base leading-relaxed max-w-2xl mx-auto">
-            From shallow coral gardens near Tulum to world-famous drift dives in Cozumel's Marine National Park and legendary wreck and shark encounters — we guide certified divers through the best reef sites in Tulum & Playa del Carmen with private, small-group attention.
+            {r.intro}
           </p>
         </div>
       </section>
@@ -223,8 +219,8 @@ export default function ReefDiving() {
         <section className="py-16 bg-[#020B14]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <Reveal className="text-center mb-10">
-              <span className="text-[#00B4D8] text-xs tracking-[0.2em] uppercase font-semibold">Best of Both Worlds</span>
-              <h2 className="mt-3 font-serif text-white text-2xl sm:text-3xl">Combine Reef + Cenote in One Day</h2>
+              <span className="text-[#00B4D8] text-xs tracking-[0.2em] uppercase font-semibold">{r.comboEyebrow}</span>
+              <h2 className="mt-3 font-serif text-white text-2xl sm:text-3xl">{r.comboH2}</h2>
             </Reveal>
             <div className="max-w-sm mx-auto">
               <TourCard item={comboItem} index={0} />
@@ -237,13 +233,13 @@ export default function ReefDiving() {
       <section className="py-20 bg-[#061A2B]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-[#00B4D8] text-xs tracking-[0.2em] uppercase font-semibold">Why Choose Us</span>
+            <span className="text-[#00B4D8] text-xs tracking-[0.2em] uppercase font-semibold">{r.whyEyebrow}</span>
             <h2 className="mt-3 font-serif text-white text-3xl sm:text-4xl tracking-tight">
-              Certified Reef Diving Guides in Tulum & Playa del Carmen
+              {r.whyH2}
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {whyPoints.map((p) => {
+            {r.whyPoints.map((p) => {
               const Icon = iconMap[p.icon];
               return (
                 <div key={p.title} className="bg-white/5 border border-white/10 rounded-xl p-6 flex gap-4">
@@ -265,16 +261,16 @@ export default function ReefDiving() {
       <section className="py-16 bg-[#020B14]">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-[#00B4D8]/10 border border-[#00B4D8]/20 rounded-2xl p-8">
-            <p className="text-[#00B4D8] text-xs font-semibold tracking-widest uppercase mb-2">Our Main Specialty</p>
-            <h3 className="font-serif text-white text-2xl mb-3">Also Try Cenote Diving in Tulum</h3>
+            <p className="text-[#00B4D8] text-xs font-semibold tracking-widest uppercase mb-2">{r.cenoteEyebrow}</p>
+            <h3 className="font-serif text-white text-2xl mb-3">{r.cenoteH3}</h3>
             <p className="text-white/65 text-sm leading-relaxed mb-6">
-              Reef diving is great — but cenote diving is our main specialty. Crystal-clear freshwater caves, extraordinary visibility and an experience unlike any ocean dive.
+              {r.cenoteP}
             </p>
             <Link
               to="/cenote-diving"
               className="inline-flex items-center gap-2 bg-[#00B4D8] hover:bg-[#0099BB] text-white font-semibold px-6 py-3 rounded-full transition-transform hover:-translate-y-0.5"
             >
-              Explore Cenote Diving <ArrowRight className="w-4 h-4" />
+              {r.cenoteCta} <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -284,23 +280,23 @@ export default function ReefDiving() {
       <section className="py-16 bg-[#061A2B]">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-            <p className="text-[#00B4D8] text-xs font-semibold tracking-widest uppercase mb-2">Not Certified Yet?</p>
-            <h3 className="font-serif text-white text-2xl mb-3">Get Your PADI Open Water</h3>
+            <p className="text-[#00B4D8] text-xs font-semibold tracking-widest uppercase mb-2">{r.courseEyebrow}</p>
+            <h3 className="font-serif text-white text-2xl mb-3">{r.courseH3}</h3>
             <p className="text-white/65 text-sm leading-relaxed mb-6">
-              Get certified in 2–3 days with a private, personalized PADI Open Water course — and unlock reef diving, cenote diving and dive sites worldwide.
+              {r.courseP}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 to="/diving-courses"
                 className="inline-flex items-center justify-center gap-2 bg-[#00B4D8] hover:bg-[#0099BB] text-white font-semibold px-6 py-3 rounded-full transition-transform hover:-translate-y-0.5"
               >
-                View PADI Courses <ArrowRight className="w-4 h-4" />
+                {r.courseCta} <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 to="/diving-courses"
                 className="inline-flex items-center justify-center gap-2 border border-[#00B4D8]/40 text-[#00B4D8] hover:bg-[#00B4D8]/10 font-semibold px-6 py-3 rounded-full transition-colors"
               >
-                PADI Advanced Diver Course <ArrowRight className="w-4 h-4" />
+                {r.advancedCta} <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -310,15 +306,15 @@ export default function ReefDiving() {
       {/* CTA */}
       <section className="py-20 bg-[#061A2B] text-center">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-white text-3xl sm:text-4xl mb-4">Ready to Dive the Caribbean Reefs?</h2>
-          <p className="text-white/60 mb-8">Message us on WhatsApp to check availability and book your reef diving experience.</p>
+          <h2 className="font-serif text-white text-3xl sm:text-4xl mb-4">{r.ctaH2}</h2>
+          <p className="text-white/60 mb-8">{r.ctaP}</p>
           <a
             href={waLink("Hi Freeway Scuba Diving, I'd like to book a reef diving experience in Tulum & Playa del Carmen.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-8 py-4 rounded-full transition-transform hover:-translate-y-1 shadow-lg shadow-[#25D366]/30"
           >
-            <WaIcon className="w-5 h-5" /> Book Reef Diving on WhatsApp
+            <WaIcon className="w-5 h-5" /> {r.ctaBtn}
           </a>
         </div>
       </section>

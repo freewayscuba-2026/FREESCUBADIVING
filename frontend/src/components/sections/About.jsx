@@ -11,10 +11,10 @@ export const About = () => {
         <Reveal>
           <div className="relative">
             <div className="overflow-hidden rounded-[2rem] shadow-2xl">
-              <img src={IMAGES.aboutDiver} alt="Friendly certified diving instructor underwater" className="w-full h-[420px] sm:h-[520px] object-cover" />
+              <img src={IMAGES.aboutDiver} alt={t.ui.alt.aboutDiver} className="w-full h-[420px] sm:h-[520px] object-cover" />
             </div>
             <div className="absolute -bottom-6 -right-2 sm:-right-6 w-40 sm:w-52 overflow-hidden rounded-2xl shadow-xl border-4 border-[#F4F1EB] hidden xs:block">
-              <img src={IMAGES.reef} alt="Coral reef teeming with life" className="w-full h-32 sm:h-40 object-cover" />
+              <img src={IMAGES.reef} alt={t.ui.alt.aboutReef} className="w-full h-32 sm:h-40 object-cover" />
             </div>
             <div className="absolute -top-5 -left-3 sm:-left-5 bg-[#061A2B] text-white rounded-2xl px-5 py-4 shadow-xl">
               <div className="grid grid-cols-3 gap-4">

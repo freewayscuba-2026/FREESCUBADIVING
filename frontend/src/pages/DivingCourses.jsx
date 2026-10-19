@@ -24,6 +24,8 @@ const tagColors = {
 
 
 function CourseCard({ item, index }) {
+  const { t } = useLanguage();
+  const s = t.ui.shared;
   return (
     <Reveal delay={(index % 3) * 0.07}>
       <div className="group h-full flex flex-col bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl transition-colors hover:border-[#00B4D8]/40">
@@ -90,7 +92,7 @@ function CourseCard({ item, index }) {
           {/* Price + CTA */}
           <div className="mt-5 pt-4 border-t border-white/10 flex items-end justify-between gap-3">
             <div>
-              <div className="text-[11px] uppercase tracking-wide text-white/50">From</div>
+              <div className="text-[11px] uppercase tracking-wide text-white/50">{s.from}</div>
               <div className="font-serif text-2xl text-[#00B4D8]">{item.price}</div>
             </div>
             <a
@@ -99,7 +101,7 @@ function CourseCard({ item, index }) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-4 py-2.5 rounded-full text-sm transition-transform hover:-translate-y-0.5 whitespace-nowrap"
             >
-              <WaIcon className="w-4 h-4" /> Ask
+              <WaIcon className="w-4 h-4" /> {s.ask}
             </a>
           </div>
         </div>
@@ -139,10 +141,10 @@ export default function DivingCourses() {
 
       <PageHeader
         image={IMAGES.course}
-        badge="PADI Courses · Tulum & Playa del Carmen"
+        badge={t.ui.coursesBadge}
         title={t.courses.title}
         subtitle={t.courses.subtitle}
-        imgAlt="Diving courses in Tulum — certified scuba instructor teaching students"
+        imgAlt={t.ui.alt.coursesPage}
       />
 
       {/* PADI Badge */}

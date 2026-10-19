@@ -9,7 +9,7 @@ export const FloatingWhatsApp = () => {
       target="_blank"
       rel="noopener noreferrer"
       data-testid="floating-whatsapp-btn"
-      aria-label="Book on WhatsApp"
+      aria-label={lang === "es" ? "Reservar por WhatsApp" : "Book on WhatsApp"}
       className="fixed bottom-5 right-5 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] text-white shadow-2xl shadow-[#25D366]/40 transition-transform hover:scale-110"
     >
       <span className="absolute inline-flex w-full h-full rounded-full bg-[#25D366] opacity-60 animate-ping" />

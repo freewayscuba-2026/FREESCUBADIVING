@@ -98,10 +98,10 @@ function HomeIntro() {
         </div>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link to="/packages" className="inline-flex items-center gap-2 bg-[#00B4D8] hover:bg-[#0099BB] text-white font-semibold px-6 py-3 rounded-full transition-transform hover:-translate-y-0.5 shadow-md shadow-[#00B4D8]/20">
-            View All Tours <ArrowRight className="w-4 h-4" />
+            {t.ui.shared.viewAllTours} <ArrowRight className="w-4 h-4" />
           </Link>
           <Link to="/diving-courses" className="inline-flex items-center gap-2 border border-[#061A2B]/20 text-[#061A2B] hover:bg-[#061A2B]/5 font-semibold px-6 py-3 rounded-full transition-colors">
-            PADI Courses <ArrowRight className="w-4 h-4" />
+            {t.ui.shared.padiCourses} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

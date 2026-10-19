@@ -26,7 +26,7 @@ export const ServicesGrid = () => {
           <div className="lg:col-span-2 relative rounded-2xl overflow-hidden group min-h-[420px] flex flex-col justify-end">
             <img
               src={serviceImages.cenote}
-              alt="PADI diving instructor guiding a small group of divers in Tulum"
+              alt={t.ui.alt.services}
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
@@ -84,7 +84,7 @@ export const ServicesGrid = () => {
             to="/packages"
             className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm font-medium transition-colors"
           >
-            View Packages & Tours <ArrowRight className="w-4 h-4" />
+            {t.ui.shared.viewPackages} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

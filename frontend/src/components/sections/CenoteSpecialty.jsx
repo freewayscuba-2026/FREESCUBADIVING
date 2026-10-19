@@ -41,7 +41,7 @@ export const CenoteSpecialty = () => {
             to="/cenote-diving"
             className="inline-flex items-center justify-center gap-2 bg-[#00B4D8] hover:bg-[#0099BB] text-white font-semibold px-7 py-3.5 rounded-full transition-transform hover:-translate-y-1 shadow-lg shadow-[#00B4D8]/20"
           >
-            Explore Cenote Diving
+            {t.ui.shared.exploreCenote}
           </Link>
         </div>
       </div>

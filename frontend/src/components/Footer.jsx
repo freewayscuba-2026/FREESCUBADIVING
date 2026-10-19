@@ -98,7 +98,7 @@ export const Footer = () => {
               <MapPin className="w-4 h-4 text-[#00B4D8] mt-0.5 shrink-0" />
               <span>
                 <span className="block">Calle Polar Pte. s/n, Tulum Centro, 77760 Tulum, Q.R.</span>
-                <span className="block text-white/50 text-xs mt-0.5">(Inside Che Tulum Hostel)</span>
+                <span className="block text-white/50 text-xs mt-0.5">{t.footer.addressNote}</span>
               </span>
             </li>
           </ul>
