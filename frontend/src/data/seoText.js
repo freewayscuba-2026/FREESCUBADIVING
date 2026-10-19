@@ -53,8 +53,8 @@ export const SEO_TEXT = {
       ogDescription: "PADI diving courses in Tulum. Open Water from $8,900 MXN. Small groups, certified instructors, real cenote and ocean dives included.",
     },
     es: {
-      title: "Cursos de Buceo en Tulum | PADI Open Water y Avanzado — Freeway Scuba Diving",
-      description: "Aprende a bucear en Tulum con instructores PADI certificados. Open Water, Avanzado, especialidad Nitrox y Bautizo de buceo. Grupos pequeños y buceos reales en el mar.",
+      title: "Cursos de Buceo PADI en Tulum | Open Water y Avanzado — Freeway Scuba Diving",
+      description: "Aprende a bucear en Tulum con instructores PADI certificados. Open Water, Advanced, especialidad Nitrox y bautizo de buceo (Discover Scuba). Grupos pequeños y buceos reales en el mar.",
       ogTitle: "Cursos de Buceo en Tulum | Certificación PADI — Freeway Scuba Diving",
       ogDescription: "Cursos de buceo PADI en Tulum. Open Water desde $8,900 MXN. Grupos pequeños, instructores certificados y buceos reales en cenote y mar incluidos.",
     },
