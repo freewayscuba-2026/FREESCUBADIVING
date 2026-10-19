@@ -8,6 +8,7 @@ import { GoogleReviewButton } from "@/components/GoogleReviewButton";
 import { ReviewQuote } from "@/components/ReviewQuote";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Reveal } from "@/components/Reveal";
+import { useCalendar } from "@/lib/useCalendar";
 import { Clock, BarChart2, MapPin, Anchor, CheckCircle2, ArrowRight, Users, XCircle, Mail } from "lucide-react";
 
 // Map a reef/wreck tour to the booking form's interest index (order shared EN/ES)
@@ -28,8 +29,8 @@ const whyPoints = [
 ];
 
 function SeasonBadge({ item }) {
+  const { month } = useCalendar();
   if (!item.seasonMonths) return null;
-  const month = new Date().getMonth() + 1;
   const inSeason = item.seasonMonths.includes(month);
   return (
     <div className={`flex items-center gap-1.5 px-3 py-2 text-xs font-semibold ${inSeason ? "bg-green-500/15 text-green-400 border-b border-green-500/20" : "bg-white/5 text-white/40 border-b border-white/10"}`}>

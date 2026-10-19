@@ -65,17 +65,28 @@ function mergeContent(base, overrideForLang) {
   return merged;
 }
 
-export function LanguageProvider({ children }) {
-  const [lang, setLang] = useState(() => {
-    if (typeof window === "undefined") return "en";
+// Language the visitor should see: saved choice first, then the browser language.
+// On the server (prerender) there is no visitor, so pages are generated in English.
+// The same rule is used by src/index.js to decide whether the prerendered HTML can
+// be hydrated (English) or must be replaced by a client render (Spanish).
+export function getPreferredLang() {
+  if (typeof window === "undefined") return "en";
+  try {
     const saved = localStorage.getItem("fws-lang");
     if (saved) return saved;
-    const browser = navigator.language || navigator.userLanguage || "";
-    return browser.toLowerCase().startsWith("es") ? "es" : "en";
-  });
+  } catch (e) { /* storage blocked: fall through to the browser language */ }
+  const browser = navigator.language || navigator.userLanguage || "";
+  return browser.toLowerCase().startsWith("es") ? "es" : "en";
+}
+
+// `initialCms` is the Sanity content that was baked into the prerendered page, so the
+// first client render is identical to the server HTML. The mount effect below still
+// refetches, so edits published in Sanity show up without waiting for a rebuild.
+export function LanguageProvider({ children, initialCms = null }) {
+  const [lang, setLang] = useState(getPreferredLang);
 
   // CMS content loaded from Sanity (null until fetched / if unavailable).
-  const [cms, setCms] = useState(null);
+  const [cms, setCms] = useState(initialCms);
 
   useEffect(() => {
     let alive = true;
@@ -87,7 +98,9 @@ export function LanguageProvider({ children }) {
 
   const apply = useCallback((value) => {
     setLang(value);
-    if (typeof window !== "undefined") localStorage.setItem("fws-lang", value);
+    if (typeof window !== "undefined") {
+      try { localStorage.setItem("fws-lang", value); } catch (e) { /* storage blocked */ }
+    }
   }, []);
   const toggle = useCallback(() => apply(lang === "en" ? "es" : "en"), [lang, apply]);
 

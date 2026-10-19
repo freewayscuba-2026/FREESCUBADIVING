@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useCalendar } from "@/lib/useCalendar";
 import { waLink, EMAIL, PHONE } from "@/data/content";
 import { WaIcon } from "@/components/icons";
 import { WaveDivider } from "@/components/WaveDivider";
@@ -47,6 +48,7 @@ const links = [
 
 export const Footer = () => {
   const { t } = useLanguage();
+  const { year } = useCalendar();
   return (
     <footer className="relative bg-[#061A2B] text-white" data-testid="main-footer">
       <WaveDivider color="#061A2B" flip className="bg-transparent -mt-1" />
@@ -118,7 +120,7 @@ export const Footer = () => {
       </div>
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 text-center">
-          <p className="text-white/45 text-xs">© {new Date().getFullYear()} Freeway Scuba Diving. {t.footer.rights}</p>
+          <p className="text-white/45 text-xs">© {year} Freeway Scuba Diving. {t.footer.rights}</p>
         </div>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 import { waLink } from "@/data/content";
 import { WaIcon } from "@/components/icons";
 import { useLanguage } from "@/context/LanguageContext";
+import { useCalendar } from "@/lib/useCalendar";
 
 const SEASONS = {
   bullShark: { months: [11, 12, 1, 2, 3] },
@@ -61,7 +62,7 @@ const BANNERS = {
 export function SeasonalBanner() {
   const { t } = useLanguage();
   const lang = t.code || "en";
-  const month = new Date().getMonth() + 1;
+  const { month } = useCalendar();
 
   const activeSeason = SEASONS.bullShark.months.includes(month)
     ? "bullShark"

@@ -23,10 +23,11 @@ function bookIndex(item) {
   return 6;
 }
 import { Reveal } from "@/components/Reveal";
+import { useCalendar } from "@/lib/useCalendar";
 
 function SeasonBadge({ item, s }) {
+  const { month } = useCalendar();
   if (!item.seasonMonths) return null;
-  const month = new Date().getMonth() + 1;
   const inSeason = item.seasonMonths.includes(month);
   return (
     <div className={`flex items-center gap-1.5 px-3 py-2 text-xs font-semibold ${inSeason ? "bg-green-500/15 text-green-400 border-b border-green-500/20" : "bg-white/5 text-white/40 border-b border-white/10"}`}>
