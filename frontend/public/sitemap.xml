@@ -11,7 +11,7 @@
   <url>
     <loc>https://freewayscubadiving.com/cenote-diving</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/cenote-diving"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/cenote-diving"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/buceo-en-cenotes"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/cenote-diving"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
   <url>
     <loc>https://freewayscubadiving.com/reef-diving</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/reef-diving"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/reef-diving"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/buceo-en-arrecifes"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/reef-diving"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -27,7 +27,7 @@
   <url>
     <loc>https://freewayscubadiving.com/diving-courses</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/diving-courses"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/diving-courses"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/cursos-de-buceo"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/diving-courses"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -35,7 +35,7 @@
   <url>
     <loc>https://freewayscubadiving.com/packages</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/packages"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/packages"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/paquetes-y-tours"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/packages"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -43,7 +43,7 @@
   <url>
     <loc>https://freewayscubadiving.com/about</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/about"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/nosotros"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/about"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -51,7 +51,7 @@
   <url>
     <loc>https://freewayscubadiving.com/faq</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/faq"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/preguntas-frecuentes"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/faq"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -59,7 +59,7 @@
   <url>
     <loc>https://freewayscubadiving.com/contact</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/contact"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/contacto"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/contact"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -67,7 +67,7 @@
   <url>
     <loc>https://freewayscubadiving.com/book</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/book"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/book"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/reservar"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/book"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -96,65 +96,65 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://freewayscubadiving.com/es/cenote-diving</loc>
+    <loc>https://freewayscubadiving.com/es/buceo-en-cenotes</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/cenote-diving"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/cenote-diving"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/buceo-en-cenotes"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/cenote-diving"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://freewayscubadiving.com/es/reef-diving</loc>
+    <loc>https://freewayscubadiving.com/es/buceo-en-arrecifes</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/reef-diving"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/reef-diving"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/buceo-en-arrecifes"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/reef-diving"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://freewayscubadiving.com/es/diving-courses</loc>
+    <loc>https://freewayscubadiving.com/es/cursos-de-buceo</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/diving-courses"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/diving-courses"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/cursos-de-buceo"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/diving-courses"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://freewayscubadiving.com/es/packages</loc>
+    <loc>https://freewayscubadiving.com/es/paquetes-y-tours</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/packages"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/packages"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/paquetes-y-tours"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/packages"/>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://freewayscubadiving.com/es/about</loc>
+    <loc>https://freewayscubadiving.com/es/nosotros</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/about"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/nosotros"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/about"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://freewayscubadiving.com/es/faq</loc>
+    <loc>https://freewayscubadiving.com/es/preguntas-frecuentes</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/faq"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/faq"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/preguntas-frecuentes"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/faq"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://freewayscubadiving.com/es/contact</loc>
+    <loc>https://freewayscubadiving.com/es/contacto</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/contact"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/contact"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/contacto"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/contact"/>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://freewayscubadiving.com/es/book</loc>
+    <loc>https://freewayscubadiving.com/es/reservar</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/book"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/book"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/reservar"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/book"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

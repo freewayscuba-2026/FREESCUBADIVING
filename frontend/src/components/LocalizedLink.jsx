@@ -4,7 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { localizeTo } from "@/lib/i18nRoutes";
 
 // Drop-in replacements for react-router's Link / NavLink: internal links such as
-// "/cenote-diving" automatically point to "/es/cenote-diving" on Spanish pages.
+// "/cenote-diving" automatically point to "/es/buceo-en-cenotes" on Spanish pages.
 export const Link = forwardRef(function Link({ to, ...props }, ref) {
   const { lang } = useLanguage();
   return <RouterLink ref={ref} to={localizeTo(to, lang)} {...props} />;

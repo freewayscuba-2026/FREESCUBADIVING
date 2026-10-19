@@ -18,6 +18,24 @@ export const BILINGUAL_PATHS = [
   "/book",
 ];
 const BILINGUAL = new Set(BILINGUAL_PATHS);
+
+// Spanish URL words for each page (what people actually search for). Internally the app
+// still identifies pages by their English path; only the public Spanish URL differs.
+export const ES_SLUGS = {
+  "/cenote-diving": "/buceo-en-cenotes",
+  "/reef-diving": "/buceo-en-arrecifes",
+  "/diving-courses": "/cursos-de-buceo",
+  "/packages": "/paquetes-y-tours",
+  "/about": "/nosotros",
+  "/faq": "/preguntas-frecuentes",
+  "/contact": "/contacto",
+  "/book": "/reservar",
+};
+const EN_FROM_ES_SLUG = Object.fromEntries(Object.entries(ES_SLUGS).map(([en, es]) => [es, en]));
+
+// Public Spanish path of a page, e.g. "/cenote-diving" -> "/es/buceo-en-cenotes".
+export const spanishPath = (basePath) =>
+  basePath === "/" ? "/es" : `/es${ES_SLUGS[basePath] || basePath}`;
 export const isBilingual = (basePath) => BILINGUAL.has(basePath);
 
 // Which SEO text block (src/data/seoText.js) belongs to each page.
@@ -46,11 +64,15 @@ export function langFromPath(pathname) {
   return p === "/es" || p.startsWith("/es/") ? "es" : "en";
 }
 
-// "/es/cenote-diving" -> "/cenote-diving", "/es" -> "/"
+// "/es/buceo-en-cenotes" -> "/cenote-diving", "/es" -> "/". The older Spanish URLs that
+// reused the English words ("/es/cenote-diving") map to the same page.
 export function stripLang(pathname) {
   const p = normalizePath(pathname);
   if (p === "/es") return "/";
-  if (p.startsWith("/es/")) return p.slice(3);
+  if (p.startsWith("/es/")) {
+    const rest = p.slice(3);
+    return EN_FROM_ES_SLUG[rest] || rest;
+  }
   return p;
 }
 
@@ -59,7 +81,7 @@ export function stripLang(pathname) {
 export function localizedPath(pathname, lang) {
   const base = stripLang(pathname);
   if (lang !== "es" || !BILINGUAL.has(base)) return base;
-  return base === "/" ? "/es" : `/es${base}`;
+  return spanishPath(base);
 }
 
 // Same idea for a link target such as "/book?i=2" (query and hash are kept).

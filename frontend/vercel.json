@@ -2,8 +2,53 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.freewayscubadiving.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.freewayscubadiving.com"
+        }
+      ],
       "destination": "https://freewayscubadiving.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/es/cenote-diving",
+      "destination": "/es/buceo-en-cenotes",
+      "permanent": true
+    },
+    {
+      "source": "/es/reef-diving",
+      "destination": "/es/buceo-en-arrecifes",
+      "permanent": true
+    },
+    {
+      "source": "/es/diving-courses",
+      "destination": "/es/cursos-de-buceo",
+      "permanent": true
+    },
+    {
+      "source": "/es/packages",
+      "destination": "/es/paquetes-y-tours",
+      "permanent": true
+    },
+    {
+      "source": "/es/about",
+      "destination": "/es/nosotros",
+      "permanent": true
+    },
+    {
+      "source": "/es/faq",
+      "destination": "/es/preguntas-frecuentes",
+      "permanent": true
+    },
+    {
+      "source": "/es/contact",
+      "destination": "/es/contacto",
+      "permanent": true
+    },
+    {
+      "source": "/es/book",
+      "destination": "/es/reservar",
       "permanent": true
     }
   ]

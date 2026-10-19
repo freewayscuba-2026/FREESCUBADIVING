@@ -16,25 +16,26 @@ test("langFromPath / stripLang", () => {
   assert.equal(r.langFromPath("/"), "en");
   assert.equal(r.langFromPath("/es"), "es");
   assert.equal(r.langFromPath("/es/"), "es");
-  assert.equal(r.langFromPath("/es/cenote-diving"), "es");
+  assert.equal(r.langFromPath("/es/buceo-en-cenotes"), "es");
   assert.equal(r.langFromPath("/essay"), "en");
   assert.equal(r.stripLang("/es"), "/");
-  assert.equal(r.stripLang("/es/cenote-diving/"), "/cenote-diving");
+  assert.equal(r.stripLang("/es/buceo-en-cenotes/"), "/cenote-diving");
+  assert.equal(r.stripLang("/es/cenote-diving"), "/cenote-diving");
   assert.equal(r.stripLang("/cenote-diving"), "/cenote-diving");
 });
 
 test("localizedPath keeps the blog in English", () => {
   assert.equal(r.localizedPath("/", "es"), "/es");
-  assert.equal(r.localizedPath("/cenote-diving", "es"), "/es/cenote-diving");
-  assert.equal(r.localizedPath("/es/cenote-diving", "en"), "/cenote-diving");
+  assert.equal(r.localizedPath("/cenote-diving", "es"), "/es/buceo-en-cenotes");
+  assert.equal(r.localizedPath("/es/buceo-en-cenotes", "en"), "/cenote-diving");
   assert.equal(r.localizedPath("/es", "en"), "/");
   assert.equal(r.localizedPath("/blog", "es"), "/blog");
   assert.equal(r.localizedPath("/blog/best-cenotes-tulum", "es"), "/blog/best-cenotes-tulum");
 });
 
 test("localizeTo keeps query and hash and ignores external or non-string targets", () => {
-  assert.equal(r.localizeTo("/book?i=2", "es"), "/es/book?i=2");
-  assert.equal(r.localizeTo("/packages#top", "es"), "/es/packages#top");
+  assert.equal(r.localizeTo("/book?i=2", "es"), "/es/reservar?i=2");
+  assert.equal(r.localizeTo("/packages#top", "es"), "/es/paquetes-y-tours#top");
   assert.equal(r.localizeTo("/book?i=2", "en"), "/book?i=2");
   assert.equal(r.localizeTo("https://example.com", "es"), "https://example.com");
   assert.equal(r.localizeTo("//cdn.example.com/x", "es"), "//cdn.example.com/x");
@@ -45,7 +46,7 @@ test("localizeTo keeps query and hash and ignores external or non-string targets
 test("absoluteUrl", () => {
   assert.equal(r.absoluteUrl("/"), "https://freewayscubadiving.com/");
   assert.equal(r.absoluteUrl("/es"), "https://freewayscubadiving.com/es");
-  assert.equal(r.absoluteUrl("/es/faq"), "https://freewayscubadiving.com/es/faq");
+  assert.equal(r.absoluteUrl("/es/preguntas-frecuentes"), "https://freewayscubadiving.com/es/preguntas-frecuentes");
 });
 
 test("every SEO key page is either bilingual or a blog page, and sitemap matches", () => {
@@ -53,7 +54,7 @@ test("every SEO key page is either bilingual or a blog page, and sitemap matches
   const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => new URL(m[1]).pathname.replace(/\/+$/, "") || "/");
   for (const p of r.BILINGUAL_PATHS) {
     assert.ok(locs.includes(p), `sitemap lacks ${p}`);
-    assert.ok(locs.includes(p === "/" ? "/es" : `/es${p}`), `sitemap lacks Spanish ${p}`);
+    assert.ok(locs.includes(r.spanishPath(p)), `sitemap lacks Spanish ${p}`);
   }
   assert.equal(locs.length, r.BILINGUAL_PATHS.length * 2 + 3);
   assert.ok(!locs.some((p) => p.startsWith("/es/blog")));

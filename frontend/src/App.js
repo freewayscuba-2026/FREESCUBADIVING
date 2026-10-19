@@ -1,6 +1,7 @@
 import "@/App.css";
 import { lazy, Suspense, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { ES_SLUGS, spanishPath } from "@/lib/i18nRoutes";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Layout } from "@/components/Layout";
@@ -44,7 +45,11 @@ export function AppRoutes() {
             <Route key={path} path={path} element={<Page />} />
           ))}
           {BILINGUAL_PAGES.map(([path, Page]) => (
-            <Route key={`es${path}`} path={path === "/" ? "/es" : `/es${path}`} element={<Page />} />
+            <Route key={`es${path}`} path={spanishPath(path)} element={<Page />} />
+          ))}
+          {/* Earlier Spanish URLs that reused the English words now redirect */}
+          {Object.keys(ES_SLUGS).map((path) => (
+            <Route key={`old-es${path}`} path={`/es${path}`} element={<Navigate to={spanishPath(path)} replace />} />
           ))}
           <Route path="/blog"            element={<Blog />} />
           <Route path="/blog/best-cenotes-tulum" element={<BlogCenoteGuide />} />
