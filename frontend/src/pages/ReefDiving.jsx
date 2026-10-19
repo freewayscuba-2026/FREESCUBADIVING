@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "@/components/LocalizedLink";
 import { ReviewCarousel } from "@/components/ReviewCarousel";
 import { useLanguage } from "@/context/LanguageContext";
-import { waLink, IMAGES } from "@/data/content";
+import { waLink, waFor, IMAGES } from "@/data/content";
 import { WaIcon, iconMap } from "@/components/icons";
 import { GoogleReviewButton } from "@/components/GoogleReviewButton";
 import { ReviewQuote } from "@/components/ReviewQuote";
@@ -122,7 +122,7 @@ function TourCard({ item, index }) {
             </div>
             <div className="flex items-center gap-2">
               <a
-                href={waLink(item.waMsg || `Hi Freeway Scuba Diving, I'd like to book the ${item.name}.`)}
+                href={waLink(item.waMsg || waFor(t.code).book(item.name))}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-4 py-2.5 rounded-full text-sm transition-transform hover:-translate-y-0.5 whitespace-nowrap"
@@ -309,7 +309,7 @@ export default function ReefDiving() {
           <h2 className="font-serif text-white text-3xl sm:text-4xl mb-4">{r.ctaH2}</h2>
           <p className="text-white/60 mb-8">{r.ctaP}</p>
           <a
-            href={waLink("Hi Freeway Scuba Diving, I'd like to book a reef diving experience in Tulum & Playa del Carmen.")}
+            href={waLink(waFor(t.code).reef)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-8 py-4 rounded-full transition-transform hover:-translate-y-1 shadow-lg shadow-[#25D366]/30"

@@ -1,11 +1,11 @@
-import { waLink } from "@/data/content";
+import { waLink, waFor } from "@/data/content";
 import { useLanguage } from "@/context/LanguageContext";
 
 export const FloatingWhatsApp = () => {
   const { lang } = useLanguage();
   return (
     <a
-      href={waLink()}
+      href={waLink(undefined, lang)}
       target="_blank"
       rel="noopener noreferrer"
       data-testid="floating-whatsapp-btn"

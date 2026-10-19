@@ -9,8 +9,37 @@ export const GOOGLE_REVIEW_COUNT = 348;
 export const DEFAULT_WA_MESSAGE =
   "Hi Freeway Scuba Diving! 👋 I'm interested in cenote diving in Tulum. Could you tell me about availability, prices and what certification I need? Thanks!";
 
-export function waLink(message) {
-  const text = message && message.trim().length ? message : DEFAULT_WA_MESSAGE;
+// Prefilled WhatsApp messages, in the language of the page the visitor is on.
+export const WA = {
+  en: {
+    default: DEFAULT_WA_MESSAGE,
+    cenote: "Hi Freeway Scuba Diving, I'd like to book a cenote diving experience in Tulum.",
+    cenoteAvailability: "Hi Freeway Scuba Diving, I'd like to check availability for cenote diving in Tulum.",
+    packageAvailability: "Hi Freeway Scuba Diving, I'd like to check availability for a diving package in Tulum.",
+    book: (name) => `Hi Freeway Scuba Diving, I'd like to book the ${name}.`,
+    reef: "Hi Freeway Scuba Diving, I'd like to book a reef diving experience in Tulum & Playa del Carmen.",
+    coursesInfo: "Hi Freeway Scuba Diving, I'd like information about diving courses in Tulum.",
+    courseInfo: (name) => `Hi Freeway Scuba Diving, I'd like information about the ${name} course in Tulum.`,
+    tour: (name) => `Hi Freeway Scuba Diving, I would like information about the "${name}" experience.`,
+    course: (name) => `Hi Freeway Scuba Diving, I would like information about the "${name}" course.`,
+  },
+  es: {
+    default: "¡Hola Freeway Scuba Diving! 👋 Me interesa el buceo en cenotes en Tulum. ¿Pueden contarme sobre disponibilidad, precios y qué certificación necesito? ¡Gracias!",
+    cenote: "Hola Freeway Scuba Diving, me gustaría reservar una experiencia de buceo en cenotes en Tulum.",
+    cenoteAvailability: "Hola Freeway Scuba Diving, me gustaría consultar la disponibilidad para buceo en cenotes en Tulum.",
+    packageAvailability: "Hola Freeway Scuba Diving, me gustaría consultar la disponibilidad de un paquete de buceo en Tulum.",
+    book: (name) => `Hola Freeway Scuba Diving, me gustaría reservar: ${name}.`,
+    reef: "Hola Freeway Scuba Diving, me gustaría reservar una experiencia de buceo en arrecife en Tulum y Playa del Carmen.",
+    coursesInfo: "Hola Freeway Scuba Diving, me gustaría información sobre los cursos de buceo en Tulum.",
+    courseInfo: (name) => `Hola Freeway Scuba Diving, me gustaría información sobre el curso ${name} en Tulum.`,
+    tour: (name) => `Hola Freeway Scuba Diving, me gustaría información sobre la experiencia "${name}".`,
+    course: (name) => `Hola Freeway Scuba Diving, me gustaría información sobre el curso "${name}".`,
+  },
+};
+export const waFor = (lang) => WA[lang === "es" ? "es" : "en"];
+
+export function waLink(message, lang = "en") {
+  const text = message && message.trim().length ? message : waFor(lang).default;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 

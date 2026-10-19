@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "@/components/LocalizedLink";
 import { ReviewCarousel } from "@/components/ReviewCarousel";
 import { useLanguage } from "@/context/LanguageContext";
-import { waLink } from "@/data/content";
+import { waLink, waFor } from "@/data/content";
 import { GoogleReviewButton } from "@/components/GoogleReviewButton";
 import { ReviewQuote } from "@/components/ReviewQuote";
 import { WaIcon } from "@/components/icons";
@@ -38,6 +38,7 @@ function SeasonBadge({ item, s }) {
 }
 
 function TourCard({ item, index, s }) {
+  const { t } = useLanguage();
   return (
     <Reveal delay={(index % 3) * 0.07}>
       <div className={`group h-full flex flex-col bg-white/5 backdrop-blur-xl border rounded-2xl overflow-hidden shadow-2xl transition-colors hover:border-[#00B4D8]/40 ${item.highlight ? "border-[#00B4D8]/50 ring-1 ring-[#00B4D8]/30" : "border-white/10"}`}>
@@ -162,7 +163,7 @@ function TourCard({ item, index, s }) {
             </div>
             <div className="flex items-center gap-2">
               <a
-                href={waLink(item.waMsg || `Hi Freeway Scuba Diving, I'd like to book the ${item.name}.`)}
+                href={waLink(item.waMsg || waFor(t.code).book(item.name))}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-4 py-2.5 rounded-full text-sm transition-transform hover:-translate-y-0.5 whitespace-nowrap"
@@ -262,7 +263,7 @@ export default function Packages() {
           <p className="text-white/60 mb-8">{ui.ctaP}</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href={waLink("Hi Freeway Scuba Diving, I'd like to check availability for a diving package in Tulum.")}
+              href={waLink(waFor(t.code).packageAvailability)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-8 py-4 rounded-full transition-transform hover:-translate-y-1 shadow-lg shadow-[#25D366]/30"

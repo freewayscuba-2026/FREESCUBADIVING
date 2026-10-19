@@ -1,5 +1,5 @@
 import { useLanguage } from "@/context/LanguageContext";
-import { waLink } from "@/data/content";
+import { waLink, waFor } from "@/data/content";
 import { WaIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 import {
@@ -39,7 +39,7 @@ export const FaqSection = ({ background = "light" }) => {
 
         <Reveal delay={0.2} className="mt-10 text-center">
           <a
-            href={waLink()} target="_blank" rel="noopener noreferrer" data-testid="faq-whatsapp-btn"
+            href={waLink(undefined, t.code)} target="_blank" rel="noopener noreferrer" data-testid="faq-whatsapp-btn"
             className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-7 py-3.5 rounded-full transition-transform hover:-translate-y-1 shadow-lg shadow-[#25D366]/20"
           >
             <WaIcon className="w-5 h-5" /> {t.nav.book}

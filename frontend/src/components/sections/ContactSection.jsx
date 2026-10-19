@@ -1,7 +1,7 @@
 import { Mail, Phone, MapPin, Star } from "lucide-react";
 import { Link } from "@/components/LocalizedLink";
 import { useLanguage } from "@/context/LanguageContext";
-import { waLink, EMAIL, PHONE } from "@/data/content";
+import { waLink, waFor, EMAIL, PHONE } from "@/data/content";
 import { WaIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 
@@ -29,7 +29,7 @@ export const ContactSection = () => {
               </Link>
             )}
             <a
-              href={waLink()} target="_blank" rel="noopener noreferrer" data-testid="contact-whatsapp-btn"
+              href={waLink(undefined, t.code)} target="_blank" rel="noopener noreferrer" data-testid="contact-whatsapp-btn"
               className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-7 py-3.5 rounded-full transition-transform hover:-translate-y-1 shadow-lg shadow-[#25D366]/30"
             >
               <WaIcon className="w-5 h-5" /> {c.whatsapp}
@@ -43,7 +43,7 @@ export const ContactSection = () => {
           </Reveal>
 
           <Reveal delay={0.2} className="mt-10 grid sm:grid-cols-3 gap-4 text-center">
-            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="bg-white/5 rounded-2xl p-5 hover:bg-white/10 transition-colors">
+            <a href={waLink(undefined, t.code)} target="_blank" rel="noopener noreferrer" className="bg-white/5 rounded-2xl p-5 hover:bg-white/10 transition-colors">
               <Phone className="w-5 h-5 text-[#00B4D8] mx-auto" />
               <div className="mt-2 text-xs uppercase tracking-wide text-white/50">{c.callLabel}</div>
               <div className="mt-1 text-sm font-medium">{PHONE}</div>

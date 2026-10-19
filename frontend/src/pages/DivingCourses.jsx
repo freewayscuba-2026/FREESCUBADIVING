@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "@/components/LocalizedLink";
 import { ReviewCarousel } from "@/components/ReviewCarousel";
 import { useLanguage } from "@/context/LanguageContext";
-import { waLink, IMAGES } from "@/data/content";
+import { waLink, waFor, IMAGES } from "@/data/content";
 import { GoogleReviewButton } from "@/components/GoogleReviewButton";
 import { ReviewQuote } from "@/components/ReviewQuote";
 import { WaIcon, iconMap } from "@/components/icons";
@@ -96,7 +96,7 @@ function CourseCard({ item, index }) {
               <div className="font-serif text-2xl text-[#00B4D8]">{item.price}</div>
             </div>
             <a
-              href={waLink(`Hi Freeway Scuba Diving, I'd like information about the ${item.name} course in Tulum.`)}
+              href={waLink(waFor(t.code).courseInfo(item.name))}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-4 py-2.5 rounded-full text-sm transition-transform hover:-translate-y-0.5 whitespace-nowrap"
@@ -240,7 +240,7 @@ export default function DivingCourses() {
           <h2 className="font-serif text-white text-3xl sm:text-4xl mb-4">{ui.ctaH2}</h2>
           <p className="text-white/60 mb-8">{ui.ctaP}</p>
           <a
-            href={waLink("Hi Freeway Scuba Diving, I'd like information about diving courses in Tulum.")}
+            href={waLink(waFor(t.code).coursesInfo)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-8 py-4 rounded-full transition-transform hover:-translate-y-1 shadow-lg shadow-[#25D366]/30"

@@ -1,6 +1,6 @@
 import { GraduationCap } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-import { waLink } from "@/data/content";
+import { waLink, waFor } from "@/data/content";
 import { WaIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 
@@ -21,7 +21,7 @@ export const CoursesSection = () => {
 
         <div className="lg:col-span-2 grid sm:grid-cols-2 gap-5">
           {c.items.map((course, i) => {
-            const msg = `Hi Freeway Scuba Diving, I would like information about the "${course.name}" course.`;
+            const msg = waFor(t.code).course(course.name);
             return (
               <Reveal key={course.name} delay={(i % 2) * 0.08}>
                 <div className="h-full flex flex-col bg-white border border-black/5 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow" data-testid={`course-card-${i}`}>

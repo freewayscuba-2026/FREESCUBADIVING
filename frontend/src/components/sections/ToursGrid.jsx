@@ -1,6 +1,6 @@
 import { Clock, Tag } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-import { waLink } from "@/data/content";
+import { waLink, waFor } from "@/data/content";
 import { WaIcon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 
@@ -20,7 +20,7 @@ export const ToursGrid = ({ showHeader = true }) => {
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {s.items.map((tour, i) => {
-            const msg = `Hi Freeway Scuba Diving, I would like information about the "${tour.name}" experience.`;
+            const msg = waFor(t.code).tour(tour.name);
             return (
               <Reveal key={tour.name} delay={(i % 3) * 0.08}>
                 <div className="group h-full flex flex-col bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl transition-colors hover:border-[#00B4D8]/40" data-testid={`tour-card-${i}`}>

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Link, NavLink } from "@/components/LocalizedLink";
 import { Menu, X, Languages } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
-import { waLink } from "@/data/content";
+import { waLink, waFor } from "@/data/content";
 import { WaIcon } from "@/components/icons";
 import logoSvg from "@/assets/Logo_principal.svg";
 
@@ -85,7 +85,7 @@ export const Navbar = () => {
             {other}
           </button>
           <a
-            href={waLink("Hi Freeway Scuba Diving, I'd like to book a cenote diving experience in Tulum.")}
+            href={waLink(waFor(t.code).cenote, t.code)}
             target="_blank"
             rel="noopener noreferrer"
             data-testid="nav-whatsapp-btn"
@@ -138,7 +138,7 @@ export const Navbar = () => {
               <Languages className="w-5 h-5" /> {other}
             </button>
             <a
-              href={waLink("Hi Freeway Scuba Diving, I'd like to book a cenote diving experience in Tulum.")}
+              href={waLink(waFor(t.code).cenote, t.code)}
               target="_blank"
               rel="noopener noreferrer"
               data-testid="mobile-whatsapp-btn"

@@ -2,7 +2,7 @@ import { Link } from "@/components/LocalizedLink";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useCalendar } from "@/lib/useCalendar";
-import { waLink, EMAIL, PHONE } from "@/data/content";
+import { waLink, waFor, EMAIL, PHONE } from "@/data/content";
 import { WaIcon } from "@/components/icons";
 import { WaveDivider } from "@/components/WaveDivider";
 
@@ -80,7 +80,7 @@ export const Footer = () => {
           <h4 className="text-xs tracking-[0.2em] uppercase text-white/50 font-semibold mb-4">{t.footer.contactTitle}</h4>
           <ul className="space-y-3 text-sm">
             <li>
-              <a href={waLink()} target="_blank" rel="noopener noreferrer" data-testid="footer-whatsapp" className="flex items-center gap-3 text-white/75 hover:text-[#25D366] transition-colors">
+              <a href={waLink(undefined, t.code)} target="_blank" rel="noopener noreferrer" data-testid="footer-whatsapp" className="flex items-center gap-3 text-white/75 hover:text-[#25D366] transition-colors">
                 <WaIcon className="w-4 h-4 text-[#25D366]" /> {PHONE}
               </a>
             </li>

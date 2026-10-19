@@ -1,7 +1,7 @@
 import { Link } from "@/components/LocalizedLink";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
-import { waLink, IMAGES } from "@/data/content";
+import { waLink, waFor, IMAGES } from "@/data/content";
 import { WaIcon, iconMap } from "@/components/icons";
 
 export const Hero = () => {
@@ -67,7 +67,7 @@ export const Hero = () => {
               {t.hero.ctaExplore}
             </Link>
             <a
-              href={waLink("Hi Freeway Scuba Diving, I'd like to check availability for cenote diving in Tulum.")}
+              href={waLink(waFor(t.code).cenoteAvailability, t.code)}
               target="_blank"
               rel="noopener noreferrer"
               data-testid="hero-whatsapp-btn"
