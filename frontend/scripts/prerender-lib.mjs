@@ -20,6 +20,13 @@ export function routesFromSitemap(xml) {
   return [...routes];
 }
 
+// True only when the page's root <div> already carries prerendered content. The plain
+// word "data-prerendered" also appears in public/index.html (CSS + comment), so checking
+// for the word alone would wrongly skip every build.
+export function isPrerendered(html) {
+  return /<div id="root"[^>]*\sdata-prerendered=/.test(html);
+}
+
 // Output file for a route, relative to the build folder.
 export function outputFileForRoute(route) {
   return route === "/" ? "index.html" : `${route.replace(/^\/+/, "")}/index.html`;

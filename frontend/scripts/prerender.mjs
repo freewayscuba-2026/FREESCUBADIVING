@@ -15,6 +15,7 @@ import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import {
   assemblePage,
+  isPrerendered,
   outputFileForRoute,
   routesFromSitemap,
 } from "./prerender-lib.mjs";
@@ -78,7 +79,7 @@ async function main() {
   if (!template) {
     throw new Error("build/index.html not found: run `craco build` first");
   }
-  if (template.includes("data-prerendered")) {
+  if (isPrerendered(template)) {
     console.log("[prerender] build/index.html is already prerendered, nothing to do");
     return;
   }

@@ -1,7 +1,7 @@
 // Run with: node --test scripts/
 import test from "node:test";
 import assert from "node:assert/strict";
-import { assemblePage, outputFileForRoute, routesFromSitemap, safeJson } from "./prerender-lib.mjs";
+import { assemblePage, isPrerendered, outputFileForRoute, routesFromSitemap, safeJson } from "./prerender-lib.mjs";
 
 const TEMPLATE =
   '<!doctype html><html lang="en"><head><meta charset="utf-8"/>' +
@@ -91,4 +91,22 @@ test("safeJson escapes characters that could break out of a script tag", () => {
   const s = safeJson({ a: "</script>", b: String.fromCharCode(0x2028) });
   assert.ok(!s.includes("</script>"));
   assert.ok(!s.includes(String.fromCharCode(0x2028)));
+});
+
+test("isPrerendered ignores the CSS/comment in the template and detects real output", () => {
+  // The real build/index.html contains the word data-prerendered in a <style> block.
+  const withCss = TEMPLATE.replace(
+    "</head>",
+    "<style>html.fws-es #root[data-prerendered]{visibility:hidden}</style></head>",
+  );
+  assert.equal(isPrerendered(withCss), false);
+  assert.equal(isPrerendered(TEMPLATE), false);
+
+  const page = assemblePage(withCss, {
+    route: "/",
+    bodyHtml: "<h1>Home</h1>",
+    helmet: {},
+    calendar: { month: 1, year: 2027 },
+  });
+  assert.equal(isPrerendered(page), true);
 });
