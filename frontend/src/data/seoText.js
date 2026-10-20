@@ -61,13 +61,13 @@ export const SEO_TEXT = {
   },
   packages: {
     en: {
-      title: "Diving Packages in Tulum & Playa del Carmen | Freeway",
+      title: "Diving Packages & Tours in Tulum & Playa del Carmen",
       description: "Cenote tours, reef dives and full-day diving packages in Tulum, Playa del Carmen and Cozumel. Small groups, certified guides. Book on WhatsApp.",
       ogTitle: "Diving Packages & Tours Tulum | Freeway Scuba Diving",
       ogDescription: "All our cenote and reef diving experiences in one place. From $2,700 MXN. Small groups, certified guides, book on WhatsApp.",
     },
     es: {
-      title: "Paquetes de Buceo en Tulum y Playa del Carmen | Freeway",
+      title: "Paquetes y Tours de Buceo en Tulum y Playa del Carmen",
       description: "Tours de cenotes, buceo en arrecife y paquetes de día completo en Tulum, Playa del Carmen y Cozumel. Grupos pequeños y guías certificados. Reserva por WhatsApp.",
       ogTitle: "Paquetes y Tours de Buceo en Tulum | Freeway Scuba Diving",
       ogDescription: "Todas nuestras experiencias de buceo en cenotes y arrecifes en un solo lugar. Desde $2,700 MXN. Grupos pequeños y guías certificados. Reserva por WhatsApp.",
@@ -89,13 +89,13 @@ export const SEO_TEXT = {
   },
   faq: {
     en: {
-      title: "Cenote Diving FAQ: Safety & Certification | Freeway Scuba",
+      title: "Cenote Diving FAQ Tulum: Safety & Certification | Freeway",
       description: "Everything you need to know before cenote diving in Tulum: certification, safety, what's included and how to book.",
       ogTitle: "Cenote Diving FAQ Tulum | Freeway Scuba Diving",
       ogDescription: "Certification, safety, what's included, prices and how to book cenote diving in Tulum. Answered by experts.",
     },
     es: {
-      title: "Buceo en Cenotes: Preguntas Frecuentes | Freeway Scuba",
+      title: "Buceo en Cenotes en Tulum: Preguntas Frecuentes | Freeway",
       description: "Todo lo que necesitas saber antes de bucear en cenotes en Tulum: certificación, seguridad, qué incluye y cómo reservar.",
       ogTitle: "Preguntas Frecuentes sobre Buceo en Cenotes | Freeway Scuba Diving",
       ogDescription: "Certificación, seguridad, qué incluye, precios y cómo reservar buceo en cenotes en Tulum. Respondido por expertos.",
