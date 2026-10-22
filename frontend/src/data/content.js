@@ -910,7 +910,7 @@ export const content = {
     },
     pageTitles: {
       cenote: {
-        title: "Cenote Diving in Tulum",
+        title: "Cenote Diving in Tulum & Playa del Carmen",
         subtitle: "Private cenote diving trips in Tulum & Playa del Carmen with certified local guides.",
       },
       reef: {
@@ -1901,7 +1901,7 @@ export const content = {
     },
     pageTitles: {
       cenote: {
-        title: "Buceo en Cenotes en Tulum",
+        title: "Buceo en Cenotes en Tulum y Playa del Carmen",
         subtitle: "Viajes privados de buceo en cenotes en Tulum y Playa del Carmen con gu\u00edas locales certificados.",
       },
       reef: {

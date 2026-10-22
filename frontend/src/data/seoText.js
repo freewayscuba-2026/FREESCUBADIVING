@@ -5,13 +5,13 @@
 export const SEO_TEXT = {
   home: {
     en: {
-      title: "Scuba Diving Tours & PADI Courses in Tulum, Playa del Carmen & Cozumel",
+      title: "Scuba Diving Tours in Tulum, Playa del Carmen & Cozumel",
       description: "Boutique dive center with 15 years of experience. Cenote diving, reef diving and PADI courses in Tulum, Playa del Carmen & Cozumel. Book on WhatsApp.",
       ogTitle: "Cenote Diving Tulum | Free Way Scuba Diving | Riviera Maya",
       ogDescription: "Cenote diving specialists in Tulum. Small-group cenote dives, reef diving, whale shark & bull shark tours and PADI courses in the Riviera Maya.",
     },
     es: {
-      title: "Buceo y Cursos PADI en Tulum, Playa del Carmen y Cozumel",
+      title: "Tours de Buceo en Tulum, Playa del Carmen y Cozumel",
       description: "Centro de buceo boutique con 15 años de experiencia. Buceo en cenotes y arrecifes y cursos PADI en Tulum, Playa del Carmen y Cozumel. Reserva por WhatsApp.",
       ogTitle: "Buceo en Cenotes Tulum | Free Way Scuba Diving | Riviera Maya",
       ogDescription: "Especialistas en buceo en cenotes en Tulum. Grupos pequeños, buceo en arrecifes, tiburón ballena y tiburón toro, y cursos PADI en la Riviera Maya.",
