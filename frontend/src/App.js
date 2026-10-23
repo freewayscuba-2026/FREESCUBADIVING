@@ -5,6 +5,7 @@ import { ES_SLUGS, spanishPath } from "@/lib/i18nRoutes";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Layout } from "@/components/Layout";
+import { RouteErrorBoundary } from "@/components/RouteErrorBoundary";
 import { lazyWithRetry as lazy } from "@/lib/lazyWithRetry";
 
 const Home         = lazy(() => import("@/pages/Home"));
@@ -69,13 +70,15 @@ function App({ Router = BrowserRouter, routerProps, helmetContext, initialCms = 
   }, []);
 
   return (
-    <HelmetProvider context={helmetContext}>
-      <Router {...routerProps}>
-        <LanguageProvider initialCms={initialCms}>
-          <AppRoutes />
-        </LanguageProvider>
-      </Router>
-    </HelmetProvider>
+    <RouteErrorBoundary>
+      <HelmetProvider context={helmetContext}>
+        <Router {...routerProps}>
+          <LanguageProvider initialCms={initialCms}>
+            <AppRoutes />
+          </LanguageProvider>
+        </Router>
+      </HelmetProvider>
+    </RouteErrorBoundary>
   );
 }
 

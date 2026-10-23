@@ -10,6 +10,16 @@ export class RouteErrorBoundary extends Component {
 
   componentDidCatch(error) {
     if (typeof console !== "undefined") console.error("Page failed to render:", error);
+    // A render error would leave the screen blank until the visitor refreshes by hand.
+    // Reload the current address once, automatically; a second failure shows the message below.
+    if (typeof window === "undefined") return;
+    const key = "fws-render-reload";
+    try {
+      if (sessionStorage.getItem(key) !== window.location.href) {
+        sessionStorage.setItem(key, window.location.href);
+        window.location.reload();
+      }
+    } catch (e) { /* storage blocked: show the message below */ }
   }
 
   render() {
