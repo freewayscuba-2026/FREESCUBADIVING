@@ -25,9 +25,9 @@ export const SEO_TEXT = {
       ogDescription: "Explore crystal-clear freshwater cenotes in Tulum with certified local guides. Small groups, max 4 divers, safety first.",
     },
     es: {
-      title: "Buceo en Cenotes en Tulum y Playa del Carmen | Freeway",
+      title: "Buceo en Cenotes de Tulum y Playa del Carmen | Freeway",
       description: "Reserva buceo en cenotes en Tulum y Playa del Carmen con guías locales certificados. Grupos pequeños, máx 4 buzos y equipo profesional. Gran Cenote y Dos Ojos.",
-      ogTitle: "Buceo en Cenotes en Tulum | Freeway Scuba Diving",
+      ogTitle: "Buceo en Cenotes de Tulum | Freeway Scuba Diving",
       ogDescription: "Explora cenotes de agua dulce cristalina en Tulum con guías locales certificados. Grupos pequeños, máximo 4 buzos y seguridad ante todo.",
     },
   },
@@ -39,9 +39,9 @@ export const SEO_TEXT = {
       ogDescription: "Reef diving in Cozumel, Playa del Carmen and Tulum. Bull sharks, whale sharks, sea turtles and drift dives with certified guides.",
     },
     es: {
-      title: "Buceo en Arrecifes en Tulum, Playa del Carmen y Cozumel",
+      title: "Buceo en Arrecifes de Tulum, Playa del Carmen y Cozumel",
       description: "Buceo en arrecifes en Tulum, Playa del Carmen y Cozumel con guías certificados. Corrientes de Cozumel, tiburón toro y tiburón ballena. Reserva por WhatsApp.",
-      ogTitle: "Buceo en Arrecife en Tulum y Playa del Carmen | Freeway Scuba Diving",
+      ogTitle: "Buceo en Arrecifes de Tulum y Playa del Carmen | Freeway Scuba Diving",
       ogDescription: "Buceo en arrecifes de Cozumel, Playa del Carmen y Tulum. Tiburones toro, tiburones ballena, tortugas y buceo de corriente con guías certificados.",
     },
   },
@@ -83,7 +83,7 @@ export const SEO_TEXT = {
     es: {
       title: "Sobre Freeway Scuba Diving | Especialistas en Cenotes",
       description: "Freeway Scuba Diving: el instructor PADI Diego y su equipo, especialistas en buceo en cenotes en Tulum. Excursiones privadas, máximo 4 buzos.",
-      ogTitle: "Sobre Freeway Scuba Diving | Especialistas en Cenotes en Tulum",
+      ogTitle: "Sobre Freeway Scuba Diving | Especialistas en Cenotes de Tulum",
       ogDescription: "Diego, instructor PADI y Full Cave Diver, ofrece excursiones privadas y personalizadas de buceo en cenotes en Tulum y Playa del Carmen.",
     },
   },
@@ -95,7 +95,7 @@ export const SEO_TEXT = {
       ogDescription: "Certification, safety, what's included, prices and how to book cenote diving in Tulum. Answered by experts.",
     },
     es: {
-      title: "Buceo en Cenotes en Tulum: Preguntas Frecuentes | Freeway",
+      title: "Buceo en Cenotes de Tulum: Preguntas Frecuentes | Freeway",
       description: "Todo lo que necesitas saber antes de bucear en cenotes en Tulum: certificación, seguridad, qué incluye y cómo reservar.",
       ogTitle: "Preguntas Frecuentes sobre Buceo en Cenotes | Freeway Scuba Diving",
       ogDescription: "Certificación, seguridad, qué incluye, precios y cómo reservar buceo en cenotes en Tulum. Respondido por expertos.",
@@ -111,7 +111,7 @@ export const SEO_TEXT = {
     es: {
       title: "Contacto Freeway Scuba Diving | Centro de Buceo en Tulum",
       description: "Escribe a nuestro centro de buceo en Tulum por WhatsApp. Respuesta rápida, guías certificados y paquetes personalizados en Tulum, Playa del Carmen y Cozumel.",
-      ogTitle: "Reserva Buceo en Cenotes en Tulum | Freeway Scuba Diving",
+      ogTitle: "Reserva Buceo en Cenotes de Tulum | Freeway Scuba Diving",
       ogDescription: "Reserva tu experiencia de buceo en cenotes en Tulum por WhatsApp. Respuesta rápida, grupos pequeños y guías locales certificados.",
     },
   },
