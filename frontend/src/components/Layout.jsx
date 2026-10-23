@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { FloatingGoogleReview } from "@/components/FloatingGoogleReview";
+import { PageSkeleton } from "@/components/PageSkeleton";
+import { RouteErrorBoundary } from "@/components/RouteErrorBoundary";
 import { LangHead } from "@/components/LangHead";
 import { stripLang } from "@/lib/i18nRoutes";
 
@@ -17,7 +19,11 @@ export const Layout = () => {
       <LangHead />
       <Navbar />
       <main>
-        <Outlet />
+        <RouteErrorBoundary key={page}>
+          <Suspense fallback={<PageSkeleton />}>
+            <Outlet />
+          </Suspense>
+        </RouteErrorBoundary>
       </main>
       <Footer />
       <FloatingWhatsApp />
