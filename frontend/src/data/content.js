@@ -910,7 +910,7 @@ export const content = {
     },
     pageTitles: {
       cenote: {
-        title: "Cenote Diving in Tulum",
+        title: "Cenote Diving in Tulum & Playa del Carmen",
         subtitle: "Private cenote diving trips in Tulum & Playa del Carmen with certified local guides.",
       },
       reef: {
@@ -1901,11 +1901,11 @@ export const content = {
     },
     pageTitles: {
       cenote: {
-        title: "Buceo en Cenotes en Tulum",
+        title: "Buceo en Cenotes de Tulum y Playa del Carmen",
         subtitle: "Viajes privados de buceo en cenotes en Tulum y Playa del Carmen con gu\u00edas locales certificados.",
       },
       reef: {
-        title: "Tours de Buceo en Arrecife en Tulum, Playa del Carmen y Cozumel",
+        title: "Tours de Buceo en Arrecifes de Tulum, Playa del Carmen y Cozumel",
         subtitle: "Buceo privado en grupos peque\u00f1os a lo largo del Sistema Arrecifal Mesoamericano y el Parque Nacional Arrecifes de Cozumel.",
       },
     },
@@ -1958,7 +1958,7 @@ export const content = {
         comboEyebrow: "Lo Mejor de Dos Mundos",
         comboH2: "Combina Arrecife y Cenote en un Solo D\u00eda",
         whyEyebrow: "\u00bfPor Qu\u00e9 Elegirnos?",
-        whyH2: "Gu\u00edas Certificados de Buceo en Arrecife en Tulum y Playa del Carmen",
+        whyH2: "Gu\u00edas Certificados de Buceo en Arrecifes de Tulum y Playa del Carmen",
         whyPoints: [
           { icon: "Award", title: "Gu\u00edas de buceo certificados", desc: "Cada buceo en arrecife est\u00e1 a cargo de profesionales certificados y con experiencia." },
           { icon: "Users", title: "Grupos peque\u00f1os", desc: "Atenci\u00f3n personalizada para cada buzo del grupo." },
@@ -1968,7 +1968,7 @@ export const content = {
           { icon: "Compass", title: "Todos los niveles", desc: "Desde buzos reci\u00e9n certificados hasta aventureros con experiencia." },
         ],
         cenoteEyebrow: "Nuestra Especialidad Principal",
-        cenoteH3: "Prueba Tambi\u00e9n el Buceo en Cenotes en Tulum",
+        cenoteH3: "Prueba Tambi\u00e9n el Buceo en Cenotes de Tulum",
         cenoteP: "El buceo en arrecife es genial, pero el buceo en cenotes es nuestra especialidad principal. Cuevas de agua dulce cristalina, visibilidad extraordinaria y una experiencia distinta a cualquier buceo en el mar.",
         cenoteCta: "Explorar Buceo en Cenotes",
         courseEyebrow: "\u00bfA\u00fan No Est\u00e1s Certificado?",
@@ -1994,7 +1994,7 @@ export const content = {
           { icon: "✨", label: "Haloclines y rayos de luz" },
         ],
         whyEyebrow: "¿Por Qué Elegirnos?",
-        whyH2: "Viajes Guiados de Buceo en Cenotes en Tulum",
+        whyH2: "Viajes Guiados de Buceo en Cenotes de Tulum",
         whyPoints: [
           { icon: "MapPin", title: "Conocemos cada cenote", desc: "Hemos buceado estos cenotes cientos de veces — los mejores puntos de entrada, los spots más hermosos y cada detalle de seguridad." },
           { icon: "ShieldCheck", title: "Seguridad siempre primero", desc: "Cada inmersión comienza con un briefing completo de seguridad adaptado a tu nivel." },
@@ -2032,7 +2032,7 @@ export const content = {
         afterEyebrow: "Después de Tu Curso",
         afterH3: "¿Listo para Bucear en un Cenote?",
         afterP: "Una vez certificado, tu próximo paso debería ser una inmersión en cenote en Tulum — nuestra especialidad principal. Cuevas de agua dulce cristalina que todo buzo debería experimentar al menos una vez.",
-        afterCta: "Explorar Buceo en Cenotes en Tulum",
+        afterCta: "Explorar Buceo en Cenotes de Tulum",
         ctaH2: "¿Listo para Comenzar a Bucear?",
         ctaP: "Escríbenos por WhatsApp para consultar fechas de cursos, disponibilidad y el curso adecuado para tu nivel.",
         ctaBtn: "Consultar Cursos por WhatsApp",
