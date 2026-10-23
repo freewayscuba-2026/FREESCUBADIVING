@@ -13,7 +13,11 @@ export const Layout = () => {
   const { pathname } = useLocation();
   // Scroll to the top when the page changes, but not when only the language changes.
   const page = stripLang(pathname);
-  useEffect(() => window.scrollTo({ top: 0, behavior: "instant" }), [page]);
+  // Braces matter: in current Chrome scrollTo returns a Promise, and an effect that returns
+  // anything but a function makes React 19 crash and blank the whole page on the next navigation.
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [page]);
   return (
     <div className="min-h-screen bg-[#F4F1EB] text-[#061A2B] font-sans antialiased">
       <LangHead />
