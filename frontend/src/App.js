@@ -1,11 +1,12 @@
 import "@/App.css";
-import { lazy, Suspense, useEffect } from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ES_SLUGS, spanishPath } from "@/lib/i18nRoutes";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Layout } from "@/components/Layout";
-import { PageSkeleton } from "@/components/PageSkeleton";
+import { RouteErrorBoundary } from "@/components/RouteErrorBoundary";
+import { lazyWithRetry as lazy } from "@/lib/lazyWithRetry";
 
 const Home         = lazy(() => import("@/pages/Home"));
 const CenoteDiving = lazy(() => import("@/pages/CenoteDiving"));
@@ -38,8 +39,7 @@ const BILINGUAL_PAGES = [
 // (scripts/prerender.mjs renders it with a StaticRouter), so both always agree.
 export function AppRoutes() {
   return (
-    <Suspense fallback={<PageSkeleton />}>
-      <Routes>
+    <Routes>
         <Route element={<Layout />}>
           {BILINGUAL_PAGES.map(([path, Page]) => (
             <Route key={path} path={path} element={<Page />} />
@@ -56,8 +56,7 @@ export function AppRoutes() {
           <Route path="/blog/certification-guide-cenote-diving" element={<BlogCertificationGuide />} />
           <Route path="*"               element={<NotFound />} />
         </Route>
-      </Routes>
-    </Suspense>
+    </Routes>
   );
 }
 
@@ -71,13 +70,15 @@ function App({ Router = BrowserRouter, routerProps, helmetContext, initialCms = 
   }, []);
 
   return (
-    <HelmetProvider context={helmetContext}>
-      <Router {...routerProps}>
-        <LanguageProvider initialCms={initialCms}>
-          <AppRoutes />
-        </LanguageProvider>
-      </Router>
-    </HelmetProvider>
+    <RouteErrorBoundary>
+      <HelmetProvider context={helmetContext}>
+        <Router {...routerProps}>
+          <LanguageProvider initialCms={initialCms}>
+            <AppRoutes />
+          </LanguageProvider>
+        </Router>
+      </HelmetProvider>
+    </RouteErrorBoundary>
   );
 }
 
