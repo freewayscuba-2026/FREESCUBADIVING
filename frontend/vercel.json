@@ -1,4 +1,8 @@
 {
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/(.*)",
@@ -49,6 +53,31 @@
     {
       "source": "/es/book",
       "destination": "/es/reservar",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home/(.*)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(fr|de|ru|it|pt|nl|pl)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(fr|de|ru|it|pt|nl|pl)/(.*)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/whale-shark",
+      "destination": "/reef-diving",
       "permanent": true
     }
   ]

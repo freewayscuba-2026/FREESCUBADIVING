@@ -137,6 +137,22 @@ async function main() {
     await fs.writeFile(target, page.content);
   }
 
+  // build/404.html: the page Vercel returns, with a real 404 status, for any address that
+  // is not a page of the site. It is the React "not found" page (noindex), rendered once.
+  try {
+    const notFoundRoute = "/__not-found__";
+    const { html, helmet, errors } = await entry.render(notFoundRoute, cms);
+    if (errors.length) throw new Error(errors.slice(0, 2).join(" | "));
+    await fs.writeFile(
+      path.join(buildDir, "404.html"),
+      assemblePage(template, { route: notFoundRoute, bodyHtml: html, helmet, cms, calendar }),
+    );
+    console.log("[prerender] 404.html written");
+  } catch (error) {
+    console.warn(`[prerender] WARNING: 404.html not written: ${error.message}`);
+    if (strict) process.exitCode = 1;
+  }
+
   console.log(`[prerender] done: ${pages.length}/${routes.length} pages written`);
   for (const page of pages) {
     console.log(`  ${page.route.padEnd(48)} ${(page.content.length / 1024).toFixed(0)} KB`);
