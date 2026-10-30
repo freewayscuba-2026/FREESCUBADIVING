@@ -19,19 +19,13 @@ const carouselSlides = [
   { src: "https://lh3.googleusercontent.com/d/1mitjgMGBt3EcMF8xntVC2d6yB2L9bSve", labelEn: "Group Experience",   labelEs: "Experiencia Grupal" },
   { src: `${WP}/2023/07/dos-ojos-cenote-2.jpg`,               labelEn: "Cenote Dos Ojos",        labelEs: "Cenote Dos Ojos" },
   { src: `${WP}/2023/07/Pit-dos-ojos-cenote-scaled.jpg`,       labelEn: "The Pit",                labelEs: "The Pit" },
-  { src: `${WP}/2023/06/Chikin-ha-cenote-scaled.jpg`,          labelEn: "Chikin Ha",              labelEs: "Chikin Ha" },
   { src: `${WP}/2023/07/casa-cenote-scaled.jpg`,               labelEn: "Casa Cenote",            labelEs: "Casa Cenote" },
   { src: `${WP}/2023/07/Angelita-cenote-scaled.jpg`,           labelEn: "Cenote Angelita",        labelEs: "Cenote Angelita" },
-  { src: `${WP}/2023/07/Dream-gate-scaled.jpg`,                labelEn: "Dream Gate",             labelEs: "Dream Gate" },
-  { src: `${WP}/2023/06/Ponderosa-cenote1-scaled.jpg`,         labelEn: "Ponderosa",              labelEs: "Ponderosa" },
-  { src: `${WP}/2023/07/Pit-dos-ojos-cenote-1-scaled.jpg`,     labelEn: "Tajma Ha",               labelEs: "Tajma Ha" },
   { src: `${WP}/2023/07/diving-in-tulum-scaled.jpg`,           labelEn: "Reef Tulum",             labelEs: "Arrecife Tulum" },
   { src: `${WP}/2023/07/divinginplayaweb-scaled.jpg`,          labelEn: "Playa del Carmen",       labelEs: "Playa del Carmen" },
-  { src: `${WP}/2023/07/divin-in-cozumel-scaled.jpg`,          labelEn: "Cozumel",                labelEs: "Cozumel" },
   { src: `${WP}/2023/07/Discovery-scuba-diving-3-scaled.jpg`,  labelEn: "Discover Scuba",         labelEs: "Descubre el Buceo" },
   { src: `${WP}/2023/07/open-water-course-scaled.jpg`,         labelEn: "Open Water Course",      labelEs: "Curso Open Water" },
   { src: `${WP}/2023/06/Advanced-course-scaled.jpg`,           labelEn: "Advanced Diver",         labelEs: "Buceador Avanzado" },
-  { src: `${WP}/2023/06/GOPR5198-scaled.jpg`,                  labelEn: "Life Underwater",        labelEs: "Vida Submarina" },
 ];
 
 const VISIBLE = 3;
