@@ -1,55 +1,117 @@
 {
-  "redirects": [
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "routes": [
     {
-      "source": "/(.*)",
+      "src": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "www.freewayscubadiving.com"
         }
       ],
-      "destination": "https://freewayscubadiving.com/$1",
-      "permanent": true
+      "headers": {
+        "Location": "https://freewayscubadiving.com/$1"
+      },
+      "status": 308
     },
     {
-      "source": "/es/cenote-diving",
-      "destination": "/es/buceo-en-cenotes",
-      "permanent": true
+      "src": "^/es/cenote-diving/?$",
+      "headers": {
+        "Location": "/es/buceo-en-cenotes"
+      },
+      "status": 308
     },
     {
-      "source": "/es/reef-diving",
-      "destination": "/es/buceo-en-arrecifes",
-      "permanent": true
+      "src": "^/es/reef-diving/?$",
+      "headers": {
+        "Location": "/es/buceo-en-arrecifes"
+      },
+      "status": 308
     },
     {
-      "source": "/es/diving-courses",
-      "destination": "/es/cursos-de-buceo",
-      "permanent": true
+      "src": "^/es/diving-courses/?$",
+      "headers": {
+        "Location": "/es/cursos-de-buceo"
+      },
+      "status": 308
     },
     {
-      "source": "/es/packages",
-      "destination": "/es/paquetes-y-tours",
-      "permanent": true
+      "src": "^/es/packages/?$",
+      "headers": {
+        "Location": "/es/paquetes-y-tours"
+      },
+      "status": 308
     },
     {
-      "source": "/es/about",
-      "destination": "/es/nosotros",
-      "permanent": true
+      "src": "^/es/about/?$",
+      "headers": {
+        "Location": "/es/nosotros"
+      },
+      "status": 308
     },
     {
-      "source": "/es/faq",
-      "destination": "/es/preguntas-frecuentes",
-      "permanent": true
+      "src": "^/es/faq/?$",
+      "headers": {
+        "Location": "/es/preguntas-frecuentes"
+      },
+      "status": 308
     },
     {
-      "source": "/es/contact",
-      "destination": "/es/contacto",
-      "permanent": true
+      "src": "^/es/contact/?$",
+      "headers": {
+        "Location": "/es/contacto"
+      },
+      "status": 308
     },
     {
-      "source": "/es/book",
-      "destination": "/es/reservar",
-      "permanent": true
+      "src": "^/es/book/?$",
+      "headers": {
+        "Location": "/es/reservar"
+      },
+      "status": 308
+    },
+    {
+      "src": "^/home(?:/.*)?$",
+      "headers": {
+        "Location": "/"
+      },
+      "status": 308
+    },
+    {
+      "src": "^/(?:fr|de|ru|it|pt|nl|pl)(?:/.*)?$",
+      "headers": {
+        "Location": "/"
+      },
+      "status": 308
+    },
+    {
+      "src": "^/whale-shark/?$",
+      "headers": {
+        "Location": "/reef-diving"
+      },
+      "status": 308
+    },
+    {
+      "src": "^/(.+)/$",
+      "headers": {
+        "Location": "/$1"
+      },
+      "status": 308
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "^/(.+)$",
+      "dest": "/$1/index.html",
+      "check": true
+    },
+    {
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "/404.html"
     }
   ]
 }
