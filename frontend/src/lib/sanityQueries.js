@@ -51,6 +51,7 @@ function cenoteItem(d, lang) {
 
 function reefItem(d, lang) {
   return {
+    source: "tour", // single-day dive tour: shown on Reef Diving, not on Packages
     name: pick(d.name, lang),
     type: CAT_LABEL[d.category]?.[lang] || (lang === "es" ? "Buceo en Arrecife" : "Reef Diving"),
     cenote: null,

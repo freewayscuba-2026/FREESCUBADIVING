@@ -190,9 +190,11 @@ export default function Packages() {
   const ui = t.ui.packages;
   const s = t.ui.shared;
 
-  const packageItems = p.items.filter((i) => i.tag === "Best Value" || i.tag === "Full Experience" || i.tag === "Mejor Valor" || i.tag === "Experiencia Completa");
-  const snorkelItems = p.items.filter((i) => i.tag === "Snorkeling" || i.tag === "Seasonal" || i.tag === "Snorkel" || i.tag === "Temporada");
-  const otherItems = p.items.filter((i) => !packageItems.includes(i) && !snorkelItems.includes(i));
+  // Single-day reef, wreck and Cozumel dives live on the Reef Diving page only.
+  const DAY_TOUR_TYPES = ["Reef Diving", "Wreck Diving", "Drift Diving", "Buceo en Arrecife", "Buceo en Naufragio", "Buceo a la Deriva"];
+  const offers = p.items.filter((i) => i.source !== "tour" && !DAY_TOUR_TYPES.includes(i.type));
+  const snorkelItems = offers.filter((i) => i.tag === "Snorkeling" || i.tag === "Seasonal" || i.tag === "Snorkel" || i.tag === "Temporada");
+  const packageItems = offers.filter((i) => !snorkelItems.includes(i));
 
   return (
     <>
@@ -242,19 +244,6 @@ export default function Packages() {
           </div>
         </div>
       </section>
-
-      {/* Other (fallback) */}
-      {otherItems.length > 0 && (
-        <section className="py-20 bg-[#061A2B]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {otherItems.map((item, i) => (
-                <TourCard key={item.name} item={item} index={i} s={s} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* CTA */}
       <section className="py-20 bg-[#061A2B] text-center">

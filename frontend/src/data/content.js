@@ -434,7 +434,7 @@ export const content = {
     packages: {
       label: "Diving Packages & Snorkeling Tours",
       title: "Diving Packages & Snorkeling Tours",
-      subtitle: "Multi-day diving packages and snorkeling tours in Tulum & Playa del Carmen — private, personalized and designed for all levels.",
+      subtitle: "Multi-day diving packages, with lodging options, and snorkeling tours in Tulum & Playa del Carmen — private, personalized and for all levels.",
       items: [
         {
           name: "Tulum Reef Diving — 2 Dives",
@@ -1426,7 +1426,7 @@ export const content = {
     packages: {
       label: "Paquetes de Buceo y Tours de Snorkel",
       title: "Paquetes de Buceo y Tours de Snorkel",
-      subtitle: "Paquetes de buceo de varios días y tours de snorkel en Tulum y Playa del Carmen, privados, personalizados y para todos los niveles.",
+      subtitle: "Paquetes de buceo de varios días, con opciones de hospedaje, y tours de snorkel en Tulum y Playa del Carmen, privados, personalizados y para todos los niveles.",
       items: [
         {
           name: "Buceo en el Arrecife de Tulum — 2 Inmersiones",
