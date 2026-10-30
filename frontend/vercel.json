@@ -94,6 +94,13 @@
       "status": 308
     },
     {
+      "src": "^/(?:scuba-diving-cozumel|dive-in-cozumel)/?$",
+      "headers": {
+        "Location": "/reef-diving"
+      },
+      "status": 308
+    },
+    {
       "src": "^/(.+)/$",
       "headers": {
         "Location": "/$1"
