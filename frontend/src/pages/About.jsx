@@ -18,18 +18,18 @@ const carouselSlides = [
   { src: "https://lh3.googleusercontent.com/d/1cyrlS4-vGnBCMKSGUhUSEP-RNfEaFNap", labelEn: "Our Divers",         labelEs: "Nuestros Buzos" },
   { src: "https://lh3.googleusercontent.com/d/1mitjgMGBt3EcMF8xntVC2d6yB2L9bSve", labelEn: "Group Experience",   labelEs: "Experiencia Grupal" },
   { src: "/images/carousel/bull-shark-playa-del-carmen.jpg",          labelEn: "Bull Shark Dive",        labelEs: "Buceo con Tiburón Toro" },
-  { src: "/images/carousel/cenote-divers-light-rays.jpg",              labelEn: "Cenote Diving",          labelEs: "Buceo en Cenotes" },
-  { src: "/images/carousel/cenote-blue-light-snorkel-divers.jpg",      labelEn: "Inside the Cenote",      labelEs: "Dentro del Cenote" },
-  { src: "/images/carousel/cenote-diver-silhouettes.jpg",              labelEn: "Cavern Silhouettes",     labelEs: "Siluetas en la Caverna" },
-  { src: `${WP}/2023/07/dos-ojos-cenote-2.jpg`,               labelEn: "Cenote Dos Ojos",        labelEs: "Cenote Dos Ojos" },
-  { src: `${WP}/2023/07/Pit-dos-ojos-cenote-scaled.jpg`,       labelEn: "The Pit",                labelEs: "The Pit" },
-  { src: `${WP}/2023/07/casa-cenote-scaled.jpg`,               labelEn: "Casa Cenote",            labelEs: "Casa Cenote" },
-  { src: `${WP}/2023/07/Angelita-cenote-scaled.jpg`,           labelEn: "Cenote Angelita",        labelEs: "Cenote Angelita" },
-  { src: `${WP}/2023/07/diving-in-tulum-scaled.jpg`,           labelEn: "Reef Tulum",             labelEs: "Arrecife Tulum" },
-  { src: `${WP}/2023/07/divinginplayaweb-scaled.jpg`,          labelEn: "Playa del Carmen",       labelEs: "Playa del Carmen" },
-  { src: `${WP}/2023/07/Discovery-scuba-diving-3-scaled.jpg`,  labelEn: "Discover Scuba",         labelEs: "Descubre el Buceo" },
-  { src: `${WP}/2023/07/open-water-course-scaled.jpg`,         labelEn: "Open Water Course",      labelEs: "Curso Open Water" },
-  { src: `${WP}/2023/06/Advanced-course-scaled.jpg`,           labelEn: "Advanced Diver",         labelEs: "Buceador Avanzado" },
+  { src: "/images/carousel/cenote-divers-light-rays.jpg",              labelEn: "Cenote Diving", labelEs: "Buceo en Cenotes" },
+  { src: "/images/carousel/cenote-blue-light-snorkel-divers.jpg",      labelEn: "Cenote Diving", labelEs: "Buceo en Cenotes" },
+  { src: "/images/carousel/cenote-diver-silhouettes.jpg",              labelEn: "Cenote Diving", labelEs: "Buceo en Cenotes" },
+  { src: `${WP}/2023/07/dos-ojos-cenote-2.jpg`,               labelEn: "Cenote Dos Ojos — 2 Dives", labelEs: "Cenote Dos Ojos — 2 Inmersiones" },
+  { src: `${WP}/2023/07/Pit-dos-ojos-cenote-scaled.jpg`,       labelEn: "The Pit & Dos Ojos Diving Tour", labelEs: "Tour de Buceo The Pit & Dos Ojos" },
+  { src: `${WP}/2023/07/casa-cenote-scaled.jpg`,               labelEn: "Casa Cenote — Manatee Cenote", labelEs: "Casa Cenote — Cenote del Manatí" },
+  { src: `${WP}/2023/07/Angelita-cenote-scaled.jpg`,           labelEn: "Cenote Angelita & Car Wash — 2 Dives", labelEs: "Cenote Angelita & Car Wash — 2 Inmersiones" },
+  { src: `${WP}/2023/07/diving-in-tulum-scaled.jpg`,           labelEn: "Tulum Reef Diving — 2 Dives", labelEs: "Buceo en el Arrecife de Tulum — 2 Inmersiones" },
+  { src: `${WP}/2023/07/divinginplayaweb-scaled.jpg`,          labelEn: "Playa del Carmen Reef Diving — 2 Dives", labelEs: "Buceo en el Arrecife de Playa del Carmen — 2 Inmersiones" },
+  { src: `${WP}/2023/07/Discovery-scuba-diving-3-scaled.jpg`,  labelEn: "Discovery Scuba Diving", labelEs: "Discover Scuba Diving" },
+  { src: `${WP}/2023/07/open-water-course-scaled.jpg`,         labelEn: "PADI Open Water Diver", labelEs: "PADI Open Water Diver" },
+  { src: `${WP}/2023/06/Advanced-course-scaled.jpg`,           labelEn: "PADI Advanced Diver", labelEs: "PADI Advanced Diver" },
 ];
 
 const VISIBLE = 3;
@@ -77,7 +77,7 @@ function ExperienceCarousel({ lang }) {
               loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-            <span className="absolute bottom-4 left-4 text-white font-semibold text-sm sm:text-base">
+            <span className="absolute bottom-4 left-4 right-4 text-white font-semibold text-sm sm:text-base leading-snug">
               {lang === "es" ? slide.labelEs : slide.labelEn}
             </span>
           </div>
