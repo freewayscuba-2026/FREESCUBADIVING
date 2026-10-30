@@ -3,6 +3,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { IMAGES } from "@/data/content";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { BookingForm } from "@/components/BookingForm";
+import { ContactSection } from "@/components/sections/ContactSection";
 import { Reveal } from "@/components/Reveal";
 
 export default function BookNow() {
@@ -50,6 +51,7 @@ export default function BookNow() {
           )}
         </div>
       </section>
+      <ContactSection />
     </>
   );
 }

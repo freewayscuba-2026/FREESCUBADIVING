@@ -61,11 +61,18 @@ export const SEO_TEXT = {
   },
   packages: {
     en: {
-      title: "Diving Packages & Tours in Tulum & Playa del Carmen",
-      description: "Cenote tours, reef dives and full-day diving packages in Tulum, Playa del Carmen and Cozumel. Small groups, certified guides. Book on WhatsApp.",
-      ogTitle: "Diving Packages & Tours Tulum | Freeway Scuba Diving",
-      ogDescription: "All our cenote and reef diving experiences in one place. From $2,700 MXN. Small groups, certified guides, book on WhatsApp.",
+      title: "Diving Packages & Snorkeling Tours in Tulum | Freeway",
+      description: "Multi-day diving packages and snorkeling tours in Tulum & Playa del Carmen: cenotes, reefs and whale shark snorkel. 100% private. Book on WhatsApp.",
+      ogTitle: "Diving Packages & Snorkeling Tours Tulum | Freeway Scuba Diving",
+      ogDescription: "Multi-day diving packages and snorkeling tours in Tulum & Playa del Carmen. Private, personalized, with a PADI Instructor.",
     },
+    es: {
+      title: "Paquetes de Buceo y Tours de Snorkel en Tulum | Freeway",
+      description: "Paquetes de buceo de varios días y tours de snorkel en Tulum y Playa del Carmen: cenotes, arrecifes y tiburón ballena. 100% privados. Reserva por WhatsApp.",
+      ogTitle: "Paquetes de Buceo y Tours de Snorkel en Tulum | Freeway Scuba Diving",
+      ogDescription: "Paquetes de buceo de varios días y tours de snorkel en Tulum y Playa del Carmen. Privados y personalizados, con Instructor PADI.",
+    },
+  },
     es: {
       title: "Paquetes y Tours de Buceo en Tulum y Playa del Carmen",
       description: "Tours de cenotes, buceo en arrecife y paquetes de día completo en Tulum, Playa del Carmen y Cozumel. Grupos pequeños y guías certificados. Reserva por WhatsApp.",

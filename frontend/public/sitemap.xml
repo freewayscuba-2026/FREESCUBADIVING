@@ -57,14 +57,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://freewayscubadiving.com/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/contact"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/contacto"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/contact"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://freewayscubadiving.com/book</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/book"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/reservar"/>
@@ -142,14 +134,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/faq"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://freewayscubadiving.com/es/contacto</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/contact"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/contacto"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/contact"/>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://freewayscubadiving.com/es/reservar</loc>

@@ -14,7 +14,6 @@ export const BILINGUAL_PATHS = [
   "/packages",
   "/about",
   "/faq",
-  "/contact",
   "/book",
 ];
 const BILINGUAL = new Set(BILINGUAL_PATHS);
@@ -28,7 +27,6 @@ export const ES_SLUGS = {
   "/packages": "/paquetes-y-tours",
   "/about": "/nosotros",
   "/faq": "/preguntas-frecuentes",
-  "/contact": "/contacto",
   "/book": "/reservar",
 };
 const EN_FROM_ES_SLUG = Object.fromEntries(Object.entries(ES_SLUGS).map(([en, es]) => [es, en]));
@@ -47,7 +45,6 @@ export const SEO_KEYS = {
   "/packages": "packages",
   "/about": "about",
   "/faq": "faq",
-  "/contact": "contact",
   "/book": "book",
   "/blog": "blog",
   "/blog/best-cenotes-tulum": "blogCenote",

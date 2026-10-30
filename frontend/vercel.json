@@ -59,9 +59,9 @@
       "status": 308
     },
     {
-      "src": "^/es/contact/?$",
+      "src": "^/es/(?:contact|contacto)/?$",
       "headers": {
-        "Location": "/es/contacto"
+        "Location": "/es/reservar"
       },
       "status": 308
     },
@@ -69,6 +69,13 @@
       "src": "^/es/book/?$",
       "headers": {
         "Location": "/es/reservar"
+      },
+      "status": 308
+    },
+    {
+      "src": "^/contact/?$",
+      "headers": {
+        "Location": "/book"
       },
       "status": 308
     },

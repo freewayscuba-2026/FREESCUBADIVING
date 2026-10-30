@@ -43,7 +43,7 @@ const links = [
   { to: "/packages", key: "packages" },
   { to: "/about", key: "about" },
   { to: "/faq", key: "faq" },
-  { to: "/contact", key: "contact" },
+  { to: "/book", key: "bookNow" },
 ];
 
 export const Footer = () => {

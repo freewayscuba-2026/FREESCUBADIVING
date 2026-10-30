@@ -15,7 +15,6 @@ const DivingCourses= lazy(() => import("@/pages/DivingCourses"));
 const Packages     = lazy(() => import("@/pages/Packages"));
 const About        = lazy(() => import("@/pages/About"));
 const FAQ          = lazy(() => import("@/pages/FAQ"));
-const Contact      = lazy(() => import("@/pages/Contact"));
 const BookNow      = lazy(() => import("@/pages/BookNow"));
 const NotFound     = lazy(() => import("@/pages/NotFound"));
 const Blog         = lazy(() => import("@/pages/Blog"));
@@ -31,7 +30,6 @@ const BILINGUAL_PAGES = [
   ["/packages", Packages],
   ["/about", About],
   ["/faq", FAQ],
-  ["/contact", Contact],
   ["/book", BookNow],
 ];
 
@@ -51,6 +49,10 @@ export function AppRoutes() {
           {Object.keys(ES_SLUGS).map((path) => (
             <Route key={`old-es${path}`} path={`/es${path}`} element={<Navigate to={spanishPath(path)} replace />} />
           ))}
+          {/* Contact was merged into the booking page */}
+          <Route path="/contact" element={<Navigate to="/book" replace />} />
+          <Route path="/es/contacto" element={<Navigate to={spanishPath("/book")} replace />} />
+          <Route path="/es/contact" element={<Navigate to={spanishPath("/book")} replace />} />
           <Route path="/blog"            element={<Blog />} />
           <Route path="/blog/best-cenotes-tulum" element={<BlogCenoteGuide />} />
           <Route path="/blog/certification-guide-cenote-diving" element={<BlogCertificationGuide />} />
