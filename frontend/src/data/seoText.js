@@ -73,13 +73,6 @@ export const SEO_TEXT = {
       ogDescription: "Paquetes de buceo de varios días y tours de snorkel en Tulum y Playa del Carmen. Privados y personalizados, con Instructor PADI.",
     },
   },
-    es: {
-      title: "Paquetes y Tours de Buceo en Tulum y Playa del Carmen",
-      description: "Tours de cenotes, buceo en arrecife y paquetes de día completo en Tulum, Playa del Carmen y Cozumel. Grupos pequeños y guías certificados. Reserva por WhatsApp.",
-      ogTitle: "Paquetes y Tours de Buceo en Tulum | Freeway Scuba Diving",
-      ogDescription: "Todas nuestras experiencias de buceo en cenotes y arrecifes en un solo lugar. Desde $2,700 MXN. Grupos pequeños y guías certificados. Reserva por WhatsApp.",
-    },
-  },
   about: {
     en: {
       title: "About Freeway Scuba Diving | Cenote Specialists, Tulum",
