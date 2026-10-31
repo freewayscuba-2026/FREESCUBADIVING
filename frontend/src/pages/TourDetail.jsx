@@ -49,7 +49,8 @@ export default function TourDetail({ pageKey }) {
   const url = absoluteUrl(localizedPath(page.path, lang));
   const heroAbs = `${SITE}${page.hero}`;
   const reefUrl = absoluteUrl(localizedPath("/reef-diving", lang));
-  const priceNumber = (item.price || "").replace(/[^\d]/g, "").slice(0, 6);
+  // First amount in the price text, e.g. "$3,500 MXN (around $200 USD)" -> "3500"
+  const priceNumber = ((item.price || "").match(/[\d][\d,]*/) || [""])[0].replace(/,/g, "");
   const waText = item.waMsg || waFor(t.code).book(c.h1);
 
   const breadcrumb = {

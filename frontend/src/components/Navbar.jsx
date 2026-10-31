@@ -66,8 +66,8 @@ function ToursDropdown({ t, active }) {
         {t.nav.tours}
         <ChevronDown className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
-      {open && (
-        <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3">
+      {/* Always in the HTML (hidden when closed) so search engines can follow these links */}
+      <div className={`absolute left-1/2 -translate-x-1/2 top-full pt-3 ${open ? "block" : "hidden"}`}>
           <div className="min-w-[220px] rounded-xl border border-white/10 bg-[#061A2B]/98 backdrop-blur-xl shadow-2xl py-2">
             {tourLinks.map((c) => (
               <NavLink
@@ -84,8 +84,7 @@ function ToursDropdown({ t, active }) {
               </NavLink>
             ))}
           </div>
-        </div>
-      )}
+      </div>
     </div>
   );
 }
