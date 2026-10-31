@@ -9,6 +9,7 @@ import { ReviewQuote } from "@/components/ReviewQuote";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { useCalendar } from "@/lib/useCalendar";
+import { TOUR_PAGE_BY_SANITY_ID } from "@/data/tourPages";
 import { Clock, BarChart2, MapPin, Anchor, CheckCircle2, ArrowRight, Users, XCircle, Mail } from "lucide-react";
 
 // Map a reef/wreck tour to the booking form's interest index (order shared EN/ES)
@@ -115,6 +116,15 @@ function TourCard({ item, index }) {
             </div>
           )}
 
+          {TOUR_PAGE_BY_SANITY_ID[item.id] && (
+            <Link
+              to={TOUR_PAGE_BY_SANITY_ID[item.id]}
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#00B4D8] hover:text-white transition-colors"
+            >
+              {t.code === "es" ? "Ver detalles del tour" : "View tour details"} <ArrowRight className="w-4 h-4" />
+            </Link>
+          )}
+
           <div className="mt-5 pt-4 border-t border-white/10 flex items-end justify-between gap-3">
             <div>
               <div className="text-[11px] uppercase tracking-wide text-white/50">{s.from}</div>
@@ -174,7 +184,7 @@ export default function ReefDiving() {
           "areaServed": ["Cozumel", "Playa del Carmen", "Tulum"],
           "serviceType": "Reef Diving Tour",
           "offers": [
-            { "@type": "Offer", "name": "Cozumel Marine Park Drift Dive", "price": "4000", "priceCurrency": "MXN" },
+            { "@type": "Offer", "name": "Cozumel Marine Park Drift Dive", "price": "3800", "priceCurrency": "MXN" },
             { "@type": "Offer", "name": "Bull Shark Dive Playa del Carmen", "price": "3500", "priceCurrency": "MXN" },
             { "@type": "Offer", "name": "Whale Shark Snorkel", "price": "3900", "priceCurrency": "MXN" }
           ]

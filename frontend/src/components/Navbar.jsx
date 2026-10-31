@@ -11,6 +11,8 @@ import logoSvg from "@/assets/Logo_principal.svg";
 const tourLinks = [
   { to: "/cenote-diving", key: "cenote" },
   { to: "/reef-diving", key: "reef" },
+  { to: "/bull-shark-diving-playa-del-carmen", key: "bullShark" },
+  { to: "/cozumel-diving-trips", key: "cozumelTrips" },
 ];
 
 const links = [

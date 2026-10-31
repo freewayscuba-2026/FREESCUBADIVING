@@ -11,6 +11,8 @@ import { lazyWithRetry as lazy } from "@/lib/lazyWithRetry";
 const Home         = lazy(() => import("@/pages/Home"));
 const CenoteDiving = lazy(() => import("@/pages/CenoteDiving"));
 const ReefDiving   = lazy(() => import("@/pages/ReefDiving"));
+const BullSharkDiving = lazy(() => import("@/pages/BullSharkDiving"));
+const CozumelDivingTrips = lazy(() => import("@/pages/CozumelDivingTrips"));
 const DivingCourses= lazy(() => import("@/pages/DivingCourses"));
 const Packages     = lazy(() => import("@/pages/Packages"));
 const About        = lazy(() => import("@/pages/About"));
@@ -26,6 +28,8 @@ const BILINGUAL_PAGES = [
   ["/", Home],
   ["/cenote-diving", CenoteDiving],
   ["/reef-diving", ReefDiving],
+  ["/bull-shark-diving-playa-del-carmen", BullSharkDiving],
+  ["/cozumel-diving-trips", CozumelDivingTrips],
   ["/diving-courses", DivingCourses],
   ["/packages", Packages],
   ["/about", About],

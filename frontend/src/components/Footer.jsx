@@ -39,6 +39,8 @@ const SOCIAL = [
 const links = [
   { to: "/cenote-diving", key: "cenote" },
   { to: "/reef-diving", key: "reef" },
+  { to: "/bull-shark-diving-playa-del-carmen", key: "bullShark" },
+  { to: "/cozumel-diving-trips", key: "cozumelTrips" },
   { to: "/diving-courses", key: "courses" },
   { to: "/packages", key: "packages" },
   { to: "/about", key: "about" },

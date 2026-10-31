@@ -25,6 +25,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://freewayscubadiving.com/bull-shark-diving-playa-del-carmen</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/bull-shark-diving-playa-del-carmen"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/buceo-con-tiburon-toro-playa-del-carmen"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/bull-shark-diving-playa-del-carmen"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freewayscubadiving.com/cozumel-diving-trips</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/cozumel-diving-trips"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/viajes-de-buceo-a-cozumel"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/cozumel-diving-trips"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://freewayscubadiving.com/diving-courses</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/diving-courses"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/cursos-de-buceo"/>
@@ -100,6 +116,22 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/reef-diving"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/buceo-en-arrecifes"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/reef-diving"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freewayscubadiving.com/es/buceo-con-tiburon-toro-playa-del-carmen</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/bull-shark-diving-playa-del-carmen"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/buceo-con-tiburon-toro-playa-del-carmen"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/bull-shark-diving-playa-del-carmen"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://freewayscubadiving.com/es/viajes-de-buceo-a-cozumel</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://freewayscubadiving.com/cozumel-diving-trips"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://freewayscubadiving.com/es/viajes-de-buceo-a-cozumel"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://freewayscubadiving.com/cozumel-diving-trips"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

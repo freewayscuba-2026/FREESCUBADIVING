@@ -59,6 +59,34 @@ export const SEO_TEXT = {
       ogDescription: "Cursos de buceo PADI en Tulum. Open Water desde $8,900 MXN. Grupos pequeños, instructores certificados y buceos reales en cenote y mar incluidos.",
     },
   },
+  bullShark: {
+    en: {
+      title: "Bull Shark Diving in Playa del Carmen | Freeway Scuba",
+      description: "Private bull shark diving in Playa del Carmen, November to March. 2 dives with a PADI Instructor: bull sharks + reef. For Advanced divers. Book now.",
+      ogTitle: "Bull Shark Diving in Playa del Carmen | Freeway Scuba Diving",
+      ogDescription: "Dive with wild bull sharks in Playa del Carmen from November to March. Private 2-dive trip with a PADI Instructor.",
+    },
+    es: {
+      title: "Buceo con Tiburón Toro en Playa del Carmen | Freeway",
+      description: "Buceo privado con tiburón toro en Playa del Carmen, de noviembre a marzo. 2 inmersiones con Instructor PADI: tiburones + arrecife. Reserva hoy.",
+      ogTitle: "Buceo con Tiburón Toro en Playa del Carmen | Freeway Scuba Diving",
+      ogDescription: "Bucea con tiburones toro en libertad en Playa del Carmen, de noviembre a marzo. Viaje privado de 2 inmersiones con Instructor PADI.",
+    },
+  },
+  cozumel: {
+    en: {
+      title: "Cozumel Diving Trips from Playa del Carmen & Tulum",
+      description: "Private Cozumel diving trip by speedboat from Playa del Carmen, no ferry. 2 drift dives in the Marine Park, back by 1:30 PM. Pickup from Tulum available.",
+      ogTitle: "Cozumel Diving Trips from Playa del Carmen & Tulum | Freeway",
+      ogDescription: "2 drift dives in the Cozumel National Marine Park by private speedboat from Playa del Carmen. Pickup from Tulum available.",
+    },
+    es: {
+      title: "Buceo en Cozumel desde Playa del Carmen y Tulum | Freeway",
+      description: "Viaje privado de buceo a Cozumel en lancha rápida desde Playa del Carmen, sin ferry. 2 inmersiones a la deriva en el Parque Marino. Recogida en Tulum.",
+      ogTitle: "Viajes de Buceo a Cozumel desde Playa del Carmen y Tulum | Freeway",
+      ogDescription: "2 inmersiones a la deriva en el Parque Nacional Marino de Cozumel, en lancha rápida privada desde Playa del Carmen. Recogida en Tulum disponible.",
+    },
+  },
   packages: {
     en: {
       title: "Diving Packages & Snorkeling Tours in Tulum | Freeway",
