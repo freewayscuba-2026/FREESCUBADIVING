@@ -20,6 +20,7 @@ export const PageHeader = ({ badge, label, title, subtitle, image, imgAlt, brigh
       <div className={`absolute inset-0 ${bright
         ? "bg-gradient-to-t from-[#061A2B] via-[#061A2B]/45 via-25% to-transparent to-55%"
         : "bg-gradient-to-t from-[#061A2B] via-[#061A2B]/80 to-[#061A2B]/50"}`} />
+      {bright && <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#061A2B]/75 to-transparent" />}
     </div>
     <div className={`relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${bright ? "[text-shadow:0_2px_12px_rgba(0,0,0,0.55)]" : ""}`}>
       <motion.span
