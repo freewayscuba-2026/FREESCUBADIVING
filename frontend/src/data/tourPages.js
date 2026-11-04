@@ -11,11 +11,13 @@ export const TOUR_PAGES = {
     sanityId: "34bN4WAXyhV7Uf4aD8Hi8b",
     bookIndex: 1,
     seasonMonths: [11, 12, 1, 2, 3],
-    hero: `${IMG}/bull-shark-divers-playa-del-carmen.webp`,
-    heroSize: [1080, 810],
+    hero: `${IMG}/divers-and-bull-shark-playa-del-carmen.webp`,
+    heroSize: [1932, 1087],
+    heroBright: true,
+    heroPosition: "center 45%",
     gallery: [
       { src: `${IMG}/bull-shark-close-up-playa-del-carmen.webp`, w: 1200, h: 1600, key: "closeUp" },
-      { src: `${IMG}/divers-watching-bull-shark-playa-del-carmen.webp`, w: 1200, h: 1600, key: "divers" },
+      { src: `${IMG}/bull-shark-divers-playa-del-carmen.webp`, w: 1080, h: 810, key: "divers" },
       { src: `${IMG}/two-bull-sharks-playa-del-carmen.webp`, w: 1200, h: 1600, key: "two" },
       { src: `${IMG}/bull-shark-sandy-bottom-playa-del-carmen.webp`, w: 1200, h: 1600, key: "sand" },
       { src: `${IMG}/bull-shark-and-sea-turtle-playa-del-carmen.webp`, w: 1080, h: 1920, key: "turtle" },
@@ -27,7 +29,7 @@ export const TOUR_PAGES = {
       badge: "Playa del Carmen · November – March",
       h1: "Bull Shark Diving in Playa del Carmen",
       subtitle: "Dive with wild bull sharks in the Mexican Caribbean on a private, two-dive trip with a PADI Instructor — available every season from November to March.",
-      heroAlt: "Bull shark swimming above scuba divers kneeling on the sandy bottom in Playa del Carmen, Mexico",
+      heroAlt: "Two scuba divers kneeling on the reef while a bull shark swims beside them in Playa del Carmen, Mexico",
       facts: {
         season: ["Season", "November – March"],
         level: ["Certification", "Advanced Open Water, or Open Water + Deep Diver"],
@@ -44,7 +46,7 @@ export const TOUR_PAGES = {
       galleryH2: "Bull shark diving photos from Playa del Carmen",
       galleryAlt: {
         closeUp: "Close-up of a bull shark with remora fish swimming over white sand in Playa del Carmen",
-        divers: "Two scuba divers kneeling on the reef while a bull shark swims behind them in Playa del Carmen",
+        divers: "Bull shark swimming above scuba divers kneeling on the sandy bottom in Playa del Carmen",
         two: "Two bull sharks swimming close to the sandy bottom with grunt fish in Playa del Carmen",
         sand: "Bull shark cruising over the sandy seabed during a shark dive in Playa del Carmen",
         turtle: "Bull shark passing above a sea turtle resting on the sand in Playa del Carmen",
@@ -81,7 +83,7 @@ export const TOUR_PAGES = {
       badge: "Playa del Carmen · Noviembre – Marzo",
       h1: "Buceo con Tiburón Toro en Playa del Carmen",
       subtitle: "Bucea con tiburones toro en libertad en el Caribe mexicano, en un viaje privado de dos inmersiones con un Instructor PADI. Temporada de noviembre a marzo.",
-      heroAlt: "Tiburón toro nadando sobre buzos arrodillados en el fondo de arena en Playa del Carmen, México",
+      heroAlt: "Dos buzos arrodillados en el arrecife mientras un tiburón toro nada a su lado en Playa del Carmen, México",
       facts: {
         season: ["Temporada", "Noviembre – marzo"],
         level: ["Certificación", "Advanced Open Water, u Open Water + Deep Diver"],
@@ -98,7 +100,7 @@ export const TOUR_PAGES = {
       galleryH2: "Fotos de buceo con tiburón toro en Playa del Carmen",
       galleryAlt: {
         closeUp: "Tiburón toro en primer plano con rémoras nadando sobre arena blanca en Playa del Carmen",
-        divers: "Dos buzos arrodillados en el arrecife mientras un tiburón toro nada detrás de ellos en Playa del Carmen",
+        divers: "Tiburón toro nadando sobre buzos arrodillados en el fondo de arena en Playa del Carmen",
         two: "Dos tiburones toro nadando cerca del fondo de arena con peces roncadores en Playa del Carmen",
         sand: "Tiburón toro recorriendo el fondo de arena durante una inmersión en Playa del Carmen",
         turtle: "Tiburón toro pasando sobre una tortuga marina en la arena en Playa del Carmen",

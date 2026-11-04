@@ -104,7 +104,7 @@ export default function TourDetail({ pageKey }) {
         <script type="application/ld+json">{JSON.stringify(faq)}</script>
       </Helmet>
 
-      <PageHeader badge={c.badge} title={c.h1} subtitle={c.subtitle} image={page.hero} imgAlt={c.heroAlt} />
+      <PageHeader badge={c.badge} title={c.h1} subtitle={c.subtitle} image={page.hero} imgAlt={c.heroAlt} bright={!!page.heroBright} imagePosition={page.heroPosition} />
 
       {/* Breadcrumb (visible) */}
       <nav aria-label="Breadcrumb" className="bg-[#061A2B]">
