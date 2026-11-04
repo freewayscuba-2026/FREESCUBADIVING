@@ -14,7 +14,7 @@ export const TOUR_PAGES = {
     hero: `${IMG}/divers-and-bull-shark-playa-del-carmen.webp`,
     heroSize: [1932, 1087],
     heroBright: true,
-    heroPosition: "center 45%",
+    heroPosition: "40% 45%",
     gallery: [
       { src: `${IMG}/bull-shark-close-up-playa-del-carmen.webp`, w: 1200, h: 1600, key: "closeUp" },
       { src: `${IMG}/bull-shark-divers-playa-del-carmen.webp`, w: 1080, h: 810, key: "divers" },
