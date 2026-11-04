@@ -9,9 +9,9 @@ import { Reveal } from "@/components/Reveal";
 import { useCalendar } from "@/lib/useCalendar";
 import { localizedPath, absoluteUrl } from "@/lib/i18nRoutes";
 import { TOUR_PAGES, RELATED_LABELS, SITE } from "@/data/tourPages";
-import { CheckCircle2, XCircle, ArrowRight, Mail, Calendar, Award, ArrowDownToLine, Clock, Waves, Ship } from "lucide-react";
+import { CheckCircle2, XCircle, ArrowRight, Mail, Calendar, Award, ArrowDownToLine, Clock, Waves, Ship, Car } from "lucide-react";
 
-const FACT_ICONS = { season: Calendar, schedule: Clock, level: Award, depth: ArrowDownToLine, duration: Clock, dives: Waves, boat: Ship };
+const FACT_ICONS = { season: Calendar, schedule: Clock, level: Award, depth: ArrowDownToLine, duration: Clock, dives: Waves, boat: Ship, pickup: Car };
 const NAME_MATCH = {
   bullShark: /bull shark|tibur[oó]n(es)? toro/i,
   cozumel: /cozumel diving trip|viaje de buceo a cozumel/i,
@@ -121,7 +121,7 @@ export default function TourDetail({ pageKey }) {
       <section className="bg-[#061A2B] pt-8 pb-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-6 grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
-            <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <dl className={`grid gap-4 sm:grid-cols-2 ${Object.keys(c.facts).length > 5 ? "lg:grid-cols-3" : "lg:grid-cols-5"}`}>
               {Object.entries(c.facts).map(([key, [label, value]]) => {
                 const Icon = FACT_ICONS[key] || CheckCircle2;
                 return (

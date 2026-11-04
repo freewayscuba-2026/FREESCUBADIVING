@@ -28,7 +28,7 @@ export const TOUR_PAGES = {
       breadcrumb: "Bull Shark Diving in Playa del Carmen",
       badge: "Playa del Carmen · November – March",
       h1: "Bull Shark Diving in Playa del Carmen",
-      subtitle: "Dive with wild bull sharks in the Mexican Caribbean on a private, two-dive trip with a PADI Instructor — available every season from November to March.",
+      subtitle: "Dive with wild bull sharks in the Mexican Caribbean on a private, two-dive trip with a PADI Instructor — available from November to March, with pickup in Playa del Carmen and Tulum.",
       heroAlt: "Two scuba divers kneeling on the reef while a bull shark swims beside them in Playa del Carmen, Mexico",
       facts: {
         season: ["Season", "November – March"],
@@ -36,6 +36,7 @@ export const TOUR_PAGES = {
         depth: ["Max depth", "24 m / 79 ft"],
         duration: ["Duration", "Half day, about 4 hours"],
         dives: ["Dives", "2 dives: bull sharks + shallow reef"],
+        pickup: ["Pickup", "Playa del Carmen & Tulum"],
       },
       introH2: "Dive with bull sharks in their natural environment",
       intro: [
@@ -54,13 +55,14 @@ export const TOUR_PAGES = {
       },
       stepsH2: "How the bull shark dive works",
       steps: [
-        ["Pickup and briefing", "We meet you, check your certification and give a full safety briefing on how to behave around the sharks."],
+        ["Pickup and briefing", "We pick you up at your hotel in Playa del Carmen or Tulum, check your certification and give a full safety briefing on how to behave around the sharks."],
         ["Dive 1: bull sharks", "Descent to the sandy bottom, where you stay in position with your guide while the bull sharks swim around the group."],
         ["Dive 2: shallow reef", "A relaxed second dive on a shallow Caribbean reef with turtles, rays and reef fish."],
         ["Back to Playa del Carmen", "Return to shore by midday, with the rest of the day free."],
       ],
-      requirementsH2: "Requirements",
+      requirementsH2: "Requirements and pickup",
       requirements: [
+        "Hotel pickup available in Playa del Carmen and Tulum.",
         "PADI Advanced Open Water certification, or Open Water plus the Deep Diver specialty.",
         "Recent diving experience and good buoyancy control. If it has been a while, we recommend a refresher dive first.",
         "Bring your certification card and logbook.",
@@ -72,6 +74,7 @@ export const TOUR_PAGES = {
         ["When is bull shark season in Playa del Carmen?", "Bull sharks are seen in Playa del Carmen from November to March. Outside these months the sharks are not present, so we only run this dive during the season."],
         ["What certification do I need for the bull shark dive?", "You need PADI Advanced Open Water, or Open Water with the Deep Diver specialty, because the shark dive goes deeper than 18 meters."],
         ["Is diving with bull sharks safe?", "The dive follows a strict protocol: divers stay together in a calm, fixed position near the bottom, close to an experienced guide, and the sharks are observed with respect at all times."],
+        ["Do you offer pickup from Tulum?", "Yes. We offer hotel pickup in both Playa del Carmen and Tulum for the bull shark dive. Tell us where you are staying when you book."],
         ["Is the bull shark dive private?", "Yes. All our tours are 100% private, so you only dive with your own group and a PADI Instructor."],
       ],
       ctaH2: "Book your bull shark dive",
@@ -82,7 +85,7 @@ export const TOUR_PAGES = {
       breadcrumb: "Buceo con Tiburón Toro en Playa del Carmen",
       badge: "Playa del Carmen · Noviembre – Marzo",
       h1: "Buceo con Tiburón Toro en Playa del Carmen",
-      subtitle: "Bucea con tiburones toro en libertad en el Caribe mexicano, en un viaje privado de dos inmersiones con un Instructor PADI. Temporada de noviembre a marzo.",
+      subtitle: "Bucea con tiburones toro en libertad en el Caribe mexicano, en un viaje privado de dos inmersiones con un Instructor PADI. Temporada de noviembre a marzo, con pickup en Playa del Carmen y Tulum.",
       heroAlt: "Dos buzos arrodillados en el arrecife mientras un tiburón toro nada a su lado en Playa del Carmen, México",
       facts: {
         season: ["Temporada", "Noviembre – marzo"],
@@ -90,6 +93,7 @@ export const TOUR_PAGES = {
         depth: ["Profundidad máx.", "24 m"],
         duration: ["Duración", "Medio día, unas 4 horas"],
         dives: ["Inmersiones", "2 inmersiones: tiburones toro + arrecife"],
+        pickup: ["Pickup", "Playa del Carmen y Tulum"],
       },
       introH2: "Bucea con tiburones toro en su entorno natural",
       intro: [
@@ -108,13 +112,14 @@ export const TOUR_PAGES = {
       },
       stepsH2: "Cómo es la inmersión con tiburón toro",
       steps: [
-        ["Recogida y briefing", "Nos encontramos, revisamos tu certificación y damos un briefing completo de seguridad sobre cómo comportarse con los tiburones."],
+        ["Pickup y briefing", "Te recogemos en tu hotel en Playa del Carmen o Tulum, revisamos tu certificación y damos un briefing completo de seguridad sobre cómo comportarse con los tiburones."],
         ["Inmersión 1: tiburones toro", "Descenso al fondo de arena, donde te quedas en posición junto a tu guía mientras los tiburones toro nadan alrededor del grupo."],
         ["Inmersión 2: arrecife", "Una segunda inmersión tranquila en un arrecife poco profundo del Caribe, con tortugas, rayas y peces de arrecife."],
         ["Regreso a Playa del Carmen", "Volvemos a tierra al mediodía y tienes el resto del día libre."],
       ],
-      requirementsH2: "Requisitos",
+      requirementsH2: "Requisitos y pickup",
       requirements: [
+        "Pickup disponible en tu hotel en Playa del Carmen y Tulum.",
         "Certificación PADI Advanced Open Water, u Open Water con la especialidad Deep Diver.",
         "Experiencia reciente de buceo y buen control de flotabilidad. Si hace tiempo que no buceas, te recomendamos una inmersión de repaso antes.",
         "Trae tu tarjeta de certificación y tu bitácora.",
@@ -126,6 +131,7 @@ export const TOUR_PAGES = {
         ["¿Cuándo es la temporada de tiburón toro en Playa del Carmen?", "Los tiburones toro se ven en Playa del Carmen de noviembre a marzo. Fuera de esos meses no están presentes, por eso solo hacemos esta inmersión durante la temporada."],
         ["¿Qué certificación necesito para bucear con tiburón toro?", "Necesitas PADI Advanced Open Water, u Open Water con la especialidad Deep Diver, porque la inmersión con tiburones supera los 18 metros."],
         ["¿Es seguro bucear con tiburones toro?", "La inmersión sigue un protocolo estricto: los buzos permanecen juntos, en una posición tranquila y fija cerca del fondo, junto a un guía con experiencia, y los tiburones se observan siempre con respeto."],
+        ["¿Ofrecen pickup desde Tulum?", "Sí. Ofrecemos pickup en tu hotel tanto en Playa del Carmen como en Tulum para el buceo con tiburón toro. Indícanos dónde te hospedas al reservar."],
         ["¿El buceo con tiburón toro es privado?", "Sí. Todos nuestros tours son 100% privados: buceas solo con tu grupo y un Instructor PADI."],
       ],
       ctaH2: "Reserva tu buceo con tiburón toro",
