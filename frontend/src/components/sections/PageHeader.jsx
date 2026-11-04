@@ -24,9 +24,11 @@ export const PageHeader = ({ badge, label, title, subtitle, image, imgAlt, brigh
     <div className={`relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${bright ? "[text-shadow:0_2px_12px_rgba(0,0,0,0.55)]" : ""}`}>
       <motion.span
         initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-        className="inline-flex items-center gap-2 text-[#00B4D8] text-xs sm:text-sm tracking-[0.2em] uppercase font-semibold"
+        className={bright
+          ? "inline-flex items-center gap-2 text-white text-xs sm:text-sm tracking-[0.2em] uppercase font-semibold bg-[#061A2B]/70 backdrop-blur-sm px-3 py-1.5 rounded-full [text-shadow:none]"
+          : "inline-flex items-center gap-2 text-[#00B4D8] text-xs sm:text-sm tracking-[0.2em] uppercase font-semibold"}
       >
-        <span className="w-8 h-px bg-[#00B4D8]" /> {badge || label}
+        <span className={bright ? "w-2 h-2 rounded-full bg-[#00B4D8]" : "w-8 h-px bg-[#00B4D8]"} /> {badge || label}
       </motion.span>
       <motion.h1
         initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
