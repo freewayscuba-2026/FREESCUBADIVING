@@ -16,7 +16,10 @@ export const sanityClient = sanityEnabled
       projectId,
       dataset,
       apiVersion: "2024-01-01",
-      useCdn: true, // fast, cached reads for published content
+      // Visitors read through the fast CDN cache. The build (prerender, which runs
+      // without a browser window) reads the live API, because it is started right after
+      // a publish in Sanity and the CDN can still hold the previous version for ~1 minute.
+      useCdn: typeof window !== "undefined",
     })
   : null;
 
