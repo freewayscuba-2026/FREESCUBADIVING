@@ -9,7 +9,7 @@ import { Reveal } from "@/components/Reveal";
 import { useCalendar } from "@/lib/useCalendar";
 import { localizedPath, absoluteUrl } from "@/lib/i18nRoutes";
 import { TOUR_PAGES, RELATED_LABELS, SITE } from "@/data/tourPages";
-import { CheckCircle2, XCircle, ArrowRight, Mail, Calendar, Award, ArrowDownToLine, Clock, Waves, Ship, Car } from "lucide-react";
+import { CheckCircle2, XCircle, ArrowRight, Mail, Calendar, Award, ArrowDownToLine, Clock, Waves, Ship, Car, Users } from "lucide-react";
 
 const FACT_ICONS = { season: Calendar, schedule: Clock, level: Award, depth: ArrowDownToLine, duration: Clock, dives: Waves, boat: Ship, pickup: Car };
 const NAME_MATCH = {
@@ -142,6 +142,11 @@ export default function TourDetail({ pageKey }) {
                   <div className="text-[11px] uppercase tracking-wide text-white/50">{s.from}</div>
                   <div className="font-serif text-2xl text-[#00B4D8] whitespace-nowrap">{item.price}</div>
                 </div>
+              )}
+              {c.groupDiscount && (
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-[#00B4D8]/15 text-[#7FDBEF] border border-[#00B4D8]/30">
+                  <Users className="w-3.5 h-3.5" /> {c.groupDiscount}
+                </span>
               )}
             </div>
           </div>

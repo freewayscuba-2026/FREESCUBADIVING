@@ -185,7 +185,7 @@ export default function ReefDiving() {
           "serviceType": "Reef Diving Tour",
           "offers": [
             { "@type": "Offer", "name": "Cozumel Marine Park Drift Dive", "price": "3800", "priceCurrency": "MXN" },
-            { "@type": "Offer", "name": "Bull Shark Dive Playa del Carmen", "price": "3500", "priceCurrency": "MXN" },
+            { "@type": "Offer", "name": "Bull Shark Dive Playa del Carmen", "price": "3800", "priceCurrency": "MXN" },
             { "@type": "Offer", "name": "Whale Shark Snorkel", "price": "3900", "priceCurrency": "MXN" }
           ]
         })}</script>
